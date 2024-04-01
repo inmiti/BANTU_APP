@@ -1,8 +1,35 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "¡¡ Correo incorrecto !!" : {
+
+    },
+    "Create an account" : {
+
+    },
+    "Forgot Password?" : {
+
+    },
+    "Hello, World!" : {
+
+    },
     "Key" : {
       "extractionState" : "manual"
+    },
+    "Login to your Account" : {
+
+    },
+    "Remember me" : {
+
+    },
+    "Wellcome Back" : {
+
+    },
+    "Your email" : {
+
+    },
+    "Your password" : {
+
     }
   },
   "version" : "1.0"

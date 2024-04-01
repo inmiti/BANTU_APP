@@ -36,8 +36,13 @@ struct CustomTextFieldView: View {
     }
 
 }
-#Preview {
-   
-    CustomTextFieldView(textComponent: ("hola@gmail.com"), isPassword: (false), isError: true)
-}
+//#Preview {
+//   
+//    CustomTextFieldView(textComponent: ("hola@gmail.com"), isPassword: (false), isError: true)
+//}
 
+struct CustomTextFieldView_Preview: PreviewProvider {
+    static var previews: some View {
+        CustomTextFieldView(textComponent: "hola@gmail.com", isPassword: false, isError: true)
+    }
+}

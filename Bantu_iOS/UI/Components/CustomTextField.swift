@@ -51,7 +51,15 @@ struct CustomTextField: View {
     }
 }
 
-#Preview {
-    CustomTextField(titleTextField: "Introduce email", errorMessage: "email incorrecto", placeHolder: "Email", textFielText: .constant("test"))
+//#Preview {
+//    CustomTextField(titleTextField: "Introduce email", errorMessage: "email incorrecto", placeHolder: "Email", textFielText: .constant("test"))
+//}
+struct CustomTextField_Preview: PreviewProvider {
+    static var previews: some View {
+        CustomTextField(titleTextField: "Introduce email",
+                        errorMessage: "email incorrecto",
+                        placeHolder: "Email",
+                        textFielText: .constant("test"))
+    }
 }
 
