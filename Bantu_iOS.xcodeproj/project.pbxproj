@@ -24,6 +24,8 @@
 		618F542A2BC296D00088BD2C /* SocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54292BC296D00088BD2C /* SocialView.swift */; };
 		618F542D2BC296E50088BD2C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F542C2BC296E50088BD2C /* SettingsView.swift */; };
 		618F542F2BC2BDFD0088BD2C /* ImageHomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F542E2BC2BDFC0088BD2C /* ImageHomeComponent.swift */; };
+		618F54332BC2E88F0088BD2C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54312BC2E88F0088BD2C /* RegistrationView.swift */; };
+		618F54342BC2E88F0088BD2C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54322BC2E88F0088BD2C /* RegistrationViewModel.swift */; };
 		61C458D82BB8394A00AE8CF3 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */; };
 		61C458DA2BB8396600AE8CF3 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458D92BB8396600AE8CF3 /* MainButton.swift */; };
 		61C458DC2BB8397A00AE8CF3 /* CustomFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458DB2BB8397A00AE8CF3 /* CustomFieldView.swift */; };
@@ -73,6 +75,8 @@
 		618F54292BC296D00088BD2C /* SocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialView.swift; sourceTree = "<group>"; };
 		618F542C2BC296E50088BD2C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		618F542E2BC2BDFC0088BD2C /* ImageHomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHomeComponent.swift; sourceTree = "<group>"; };
+		618F54312BC2E88F0088BD2C /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		618F54322BC2E88F0088BD2C /* RegistrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		61C458D92BB8396600AE8CF3 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		61C458DB2BB8397A00AE8CF3 /* CustomFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldView.swift; sourceTree = "<group>"; };
@@ -210,9 +214,19 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		618F54302BC2E88F0088BD2C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				618F54312BC2E88F0088BD2C /* RegistrationView.swift */,
+				618F54322BC2E88F0088BD2C /* RegistrationViewModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		61C458D42BB838D800AE8CF3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				618F54302BC2E88F0088BD2C /* Registration */,
 				618F542B2BC296D40088BD2C /* Settings */,
 				618F54282BC296C00088BD2C /* Social */,
 				618F54252BC296900088BD2C /* Search Coach */,
@@ -416,6 +430,7 @@
 				61C458E82BB83A0500AE8CF3 /* SplashView.swift in Sources */,
 				61C458DE2BB8399400AE8CF3 /* CustomTextField.swift in Sources */,
 				61C458D82BB8394A00AE8CF3 /* CheckBoxButton.swift in Sources */,
+				618F54342BC2E88F0088BD2C /* RegistrationViewModel.swift in Sources */,
 				6178BD0B2BC1940900257502 /* HomeClientView.swift in Sources */,
 				613656A12BB3361500DA8A71 /* Bantu_iOS.xcdatamodeld in Sources */,
 				61E62D222BC1A1CA00A5A6CF /* TabBarView.swift in Sources */,
@@ -425,6 +440,7 @@
 				61C458E02BB839AC00AE8CF3 /* CustomTextFieldView.swift in Sources */,
 				6178BD092BC18EA900257502 /* HeaderView.swift in Sources */,
 				618F54272BC296AB0088BD2C /* SearchCoachView.swift in Sources */,
+				618F54332BC2E88F0088BD2C /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
