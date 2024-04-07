@@ -33,17 +33,17 @@ struct RegistrationView: View {
                     CustomTextFieldView(
                         textComponent: viewModel.username,
                         isPassword: false,
-                        isError: true)
+                        isError: true, titletextField: "Your name")
                     
                     CustomTextFieldView(
                         textComponent: viewModel.email,
                         isPassword: false,
-                        isError: true)
+                        isError: true, titletextField: "Your email")
                     
                     CustomTextFieldView(
                         textComponent: viewModel.password,
                         isPassword: true,
-                        isError: true)
+                        isError: true, titletextField: "Your password")
                     
                     MainButton(textButton: "Sign in") {
                         //TODO Accion

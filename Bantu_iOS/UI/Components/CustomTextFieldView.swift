@@ -11,9 +11,13 @@ struct CustomTextFieldView: View {
     @State  var textComponent: String
     @State  var isPassword: Bool
     @State var isError: Bool
+    @State var titletextField: String
     var body: some View {
       
         VStack(alignment: .leading){
+            Text(titletextField)
+                .font(.system(size: 12))
+                .frame(maxWidth: .infinity, alignment: .leading)
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(Color.white)
                 .frame(height: 62)
@@ -38,7 +42,7 @@ struct CustomTextFieldView: View {
 }
 #Preview {
    
-    CustomTextFieldView(textComponent: ("hola@gmail.com"), isPassword: (false), isError: true)
+    CustomTextFieldView(textComponent: "hola@gmail.com", isPassword: false, isError: true, titletextField: "Your email")
 }
 
 

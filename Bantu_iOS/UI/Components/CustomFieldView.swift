@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomFieldView: View {
     @Binding var textComponent: String
     @Binding var isPassword: Bool
+    
     var body: some View {
         if !isPassword {
             TextField("Your email", text: $textComponent)
@@ -33,7 +34,7 @@ struct CustomFieldView: View {
                 .opacity(0.8)
                 .id(4)
         } else {
-            SecureField("Your password", text: $textComponent)
+            SecureField("Your Password", text: $textComponent)
                 .padding(.leading, 40)
                 .overlay(
                     HStack {
@@ -59,6 +60,6 @@ struct CustomFieldView: View {
 
 
 #Preview {
-        CustomFieldView(textComponent: .constant("test@hotmail.com"), isPassword: .constant(true))
+        CustomFieldView(textComponent:  .constant("test@hotmail.com"), isPassword: .constant(true))
     }
 

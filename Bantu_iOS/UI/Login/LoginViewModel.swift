@@ -11,4 +11,5 @@ final class LoginViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var rememberMe = false
+    @Published var isPassword = false
 }

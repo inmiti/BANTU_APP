@@ -16,12 +16,14 @@ struct LoginView: View {
     var body: some View {
         
         NavigationView {
-            //Background
-         
-                
-                
+            ZStack {
+                Image(decorative:"")
+                    .resizable()
+                    .background(Color("backgroundBantu"))
+                    .edgesIgnoringSafeArea(.all)
+                //Background
                 VStack(spacing: 11) {
-                    Image("icon-38")
+                    Image("Icon2")
                         .resizable()
                         .frame(width: 150, height: 150)
                     //Title
@@ -35,10 +37,10 @@ struct LoginView: View {
                     VStack(alignment: .leading, spacing: 20){
                         CustomTextFieldView(textComponent: loginViewModel.email,
                                             isPassword: false,
-                                            isError: true)
+                                            isError: false, titletextField: "Your email")
                         CustomTextFieldView(textComponent: loginViewModel.password,
                                             isPassword: true,
-                                            isError: true)
+                                            isError: false, titletextField: "Your Password")
                     }
                     HStack(spacing: 110){
                         HStack(spacing: 4) {
@@ -78,11 +80,13 @@ struct LoginView: View {
                 }
                 .padding(35)
                 .lineSpacing(10.0)
+                
             }
             .navigationBarHidden(true)
+          
         }
-        
     }
+}
 
 #Preview {
     LoginView(state: .constant(.login))
