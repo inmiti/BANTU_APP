@@ -27,8 +27,7 @@ struct MainButton: View {
     }
 }
 
-struct MainButton_Preview: PreviewProvider {
-    static var previews: some View {
+#Preview {
         MainButton(textButton: "Sign in", action: {})
     }
-}
+

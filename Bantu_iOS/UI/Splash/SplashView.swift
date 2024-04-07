@@ -25,9 +25,9 @@ struct SplashView: View {
             case .splash:
                 splashSection
             case .login:
-                LoginView()
+                LoginView(state: $viewState)
             case .home:
-                HomeView()
+               TabBarView()
             }
         }
     }
@@ -47,14 +47,9 @@ struct SplashView: View {
 }
 
 
-//#Preview {
-//    SplashView()
-//        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//}
-
-struct SplashView_Preview: PreviewProvider {
-    static var previews: some View {
-        let context = PersistenceController.preview.container.viewContext
-        return SplashView().environment(\.managedObjectContext, context)
-    }
+#Preview {
+    SplashView()
+        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
+
+
