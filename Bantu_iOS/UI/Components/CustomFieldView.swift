@@ -56,12 +56,9 @@ struct CustomFieldView: View {
         }
     }
 }
-//#Preview {
-//    CustomFieldView(textComponent: .constant("test@hotmail.com"), isPassword: .constant(true))
-//}
 
-struct CustomFieldView_Preview: PreviewProvider {
-    static var previews: some View {
+
+#Preview {
         CustomFieldView(textComponent: .constant("test@hotmail.com"), isPassword: .constant(true))
     }
-}
+
