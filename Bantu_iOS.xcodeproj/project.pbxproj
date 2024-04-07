@@ -23,6 +23,7 @@
 		618F54272BC296AB0088BD2C /* SearchCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54262BC296AB0088BD2C /* SearchCoachView.swift */; };
 		618F542A2BC296D00088BD2C /* SocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54292BC296D00088BD2C /* SocialView.swift */; };
 		618F542D2BC296E50088BD2C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F542C2BC296E50088BD2C /* SettingsView.swift */; };
+		618F542F2BC2BDFD0088BD2C /* ImageHomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F542E2BC2BDFC0088BD2C /* ImageHomeComponent.swift */; };
 		61C458D82BB8394A00AE8CF3 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */; };
 		61C458DA2BB8396600AE8CF3 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458D92BB8396600AE8CF3 /* MainButton.swift */; };
 		61C458DC2BB8397A00AE8CF3 /* CustomFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458DB2BB8397A00AE8CF3 /* CustomFieldView.swift */; };
@@ -71,6 +72,7 @@
 		618F54262BC296AB0088BD2C /* SearchCoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoachView.swift; sourceTree = "<group>"; };
 		618F54292BC296D00088BD2C /* SocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialView.swift; sourceTree = "<group>"; };
 		618F542C2BC296E50088BD2C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		618F542E2BC2BDFC0088BD2C /* ImageHomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHomeComponent.swift; sourceTree = "<group>"; };
 		61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		61C458D92BB8396600AE8CF3 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		61C458DB2BB8397A00AE8CF3 /* CustomFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				61C458DF2BB839AC00AE8CF3 /* CustomTextFieldView.swift */,
 				6178BD082BC18EA800257502 /* HeaderView.swift */,
 				61E62D212BC1A1CA00A5A6CF /* TabBarView.swift */,
+				618F542E2BC2BDFC0088BD2C /* ImageHomeComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				6136569E2BB3361500DA8A71 /* Persistence.swift in Sources */,
 				61C458DC2BB8397A00AE8CF3 /* CustomFieldView.swift in Sources */,
 				61C458E52BB839EA00AE8CF3 /* LoginViewModel.swift in Sources */,
+				618F542F2BC2BDFD0088BD2C /* ImageHomeComponent.swift in Sources */,
 				618F542D2BC296E50088BD2C /* SettingsView.swift in Sources */,
 				613656DA2BB33C3700DA8A71 /* Color+Extension.swift in Sources */,
 				61C458DA2BB8396600AE8CF3 /* MainButton.swift in Sources */,
@@ -509,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -566,7 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
