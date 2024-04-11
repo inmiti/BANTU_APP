@@ -28,22 +28,27 @@ struct RegistrationView: View {
                 
                 Text("Create your account")
                     .font(.system(size: 15))
+                    .padding(.bottom, 24)
                 
-                VStack{
-                    CustomTextFieldView(
+                
+                VStack(alignment: .leading, spacing: 20){
+                    CustomTextFieldView2(
                         textComponent: viewModel.username,
-                        isPassword: false,
-                        isError: true, titletextField: "Your name")
+                        isError: true,
+                        fieldType: .username)
                     
-                    CustomTextFieldView(
+                    CustomTextFieldView2(
                         textComponent: viewModel.email,
-                        isPassword: false,
-                        isError: true, titletextField: "Your email")
+                        isError: true,
+                        fieldType: .email
+                    )
                     
-                    CustomTextFieldView(
+                    CustomTextFieldView2(
                         textComponent: viewModel.password,
-                        isPassword: true,
-                        isError: true, titletextField: "Your password")
+                        isError: true,
+                        fieldType: .password
+                
+                        )
                     
                     MainButton(textButton: "Sign in") {
                         //TODO Accion
@@ -62,3 +67,4 @@ struct RegistrationView_Previews: PreviewProvider {
         RegistrationView()
     }
 }
+
