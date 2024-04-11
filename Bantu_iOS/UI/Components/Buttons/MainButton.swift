@@ -17,17 +17,24 @@ struct MainButton: View {
                , label: {
             Text(textButton)
         })
-        .buttonStyle(.bordered)
+        .buttonStyle(.plain)
         .frame(height: 60)
         .frame(maxWidth: .infinity)
         .foregroundColor(.black)
-        .background(Color.bantu_purple)
+        .background(Color.bantu_orange)
         .cornerRadius(30)
       
     }
 }
 
-#Preview {
+struct  MainButton_Previews: PreviewProvider {
+    static var previews: some View {
         MainButton(textButton: "Sign in", action: {})
     }
+}
+
+//
+//#Preview {
+//        MainButton(textButton: "Sign in", action: {})
+//    }
 
