@@ -6,3 +6,6 @@
 //
 
 import Foundation
+struct Country: Codable {
+    
+}

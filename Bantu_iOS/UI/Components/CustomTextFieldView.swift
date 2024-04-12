@@ -27,7 +27,7 @@ struct CustomTextFieldView: View {
                 }
                 .overlay(
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(Color.bantu_purple, lineWidth: 1)
+                        .stroke(Color.bantu_pink, lineWidth: 1)
                 )
               
             if isError == true {

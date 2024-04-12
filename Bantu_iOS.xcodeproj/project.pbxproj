@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610989B82BC9905700A78684 /* CustomFieldView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610989B52BC9905700A78684 /* CustomFieldView2.swift */; };
+		610989B92BC9905700A78684 /* CustomTextFieldView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610989B62BC9905700A78684 /* CustomTextFieldView2.swift */; };
+		610989BA2BC9905700A78684 /* TypeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610989B72BC9905700A78684 /* TypeField.swift */; };
+		610989BC2BC99BB900A78684 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610989BB2BC99BB900A78684 /* NetworkModel.swift */; };
 		613656952BB3361300DA8A71 /* Bantu_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613656942BB3361300DA8A71 /* Bantu_iOSApp.swift */; };
 		613656992BB3361500DA8A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613656982BB3361500DA8A71 /* Assets.xcassets */; };
 		6136569C2BB3361500DA8A71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6136569B2BB3361500DA8A71 /* Preview Assets.xcassets */; };
@@ -60,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		610989B52BC9905700A78684 /* CustomFieldView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFieldView2.swift; sourceTree = "<group>"; };
+		610989B62BC9905700A78684 /* CustomTextFieldView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView2.swift; sourceTree = "<group>"; };
+		610989B72BC9905700A78684 /* TypeField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeField.swift; sourceTree = "<group>"; };
+		610989BB2BC99BB900A78684 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		613656912BB3361300DA8A71 /* Bantu_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bantu_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613656942BB3361300DA8A71 /* Bantu_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bantu_iOSApp.swift; sourceTree = "<group>"; };
 		613656982BB3361500DA8A71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -266,6 +274,7 @@
 		618F54382BC2F7A90088BD2C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				610989BB2BC99BB900A78684 /* NetworkModel.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -320,6 +329,9 @@
 		61C458D52BB838E900AE8CF3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				610989B52BC9905700A78684 /* CustomFieldView2.swift */,
+				610989B62BC9905700A78684 /* CustomTextFieldView2.swift */,
+				610989B72BC9905700A78684 /* TypeField.swift */,
 				61C458D62BB8390200AE8CF3 /* Buttons */,
 				61C458DB2BB8397A00AE8CF3 /* CustomFieldView.swift */,
 				61C458DD2BB8399400AE8CF3 /* CustomTextField.swift */,
@@ -500,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6136569E2BB3361500DA8A71 /* Persistence.swift in Sources */,
+				610989BA2BC9905700A78684 /* TypeField.swift in Sources */,
 				61C458DC2BB8397A00AE8CF3 /* CustomFieldView.swift in Sources */,
 				61C458E52BB839EA00AE8CF3 /* LoginViewModel.swift in Sources */,
 				618F542F2BC2BDFD0088BD2C /* ImageHomeComponent.swift in Sources */,
@@ -509,6 +522,7 @@
 				61C458DA2BB8396600AE8CF3 /* MainButton.swift in Sources */,
 				618F54442BC2FAD70088BD2C /* Country.swift in Sources */,
 				61C458E82BB83A0500AE8CF3 /* SplashView.swift in Sources */,
+				610989B92BC9905700A78684 /* CustomTextFieldView2.swift in Sources */,
 				61C458DE2BB8399400AE8CF3 /* CustomTextField.swift in Sources */,
 				61C458D82BB8394A00AE8CF3 /* CheckBoxButton.swift in Sources */,
 				618F54342BC2E88F0088BD2C /* RegistrationViewModel.swift in Sources */,
@@ -517,10 +531,12 @@
 				613656A12BB3361500DA8A71 /* Bantu_iOS.xcdatamodeld in Sources */,
 				61E62D222BC1A1CA00A5A6CF /* TabBarView.swift in Sources */,
 				613656952BB3361300DA8A71 /* Bantu_iOSApp.swift in Sources */,
+				610989BC2BC99BB900A78684 /* NetworkModel.swift in Sources */,
 				61C458E32BB839D400AE8CF3 /* LoginView.swift in Sources */,
 				618F542A2BC296D00088BD2C /* SocialView.swift in Sources */,
 				61C458E02BB839AC00AE8CF3 /* CustomTextFieldView.swift in Sources */,
 				618F54462BC2FAE40088BD2C /* Province.swift in Sources */,
+				610989B82BC9905700A78684 /* CustomFieldView2.swift in Sources */,
 				6178BD092BC18EA900257502 /* HeaderView.swift in Sources */,
 				618F54272BC296AB0088BD2C /* SearchCoachView.swift in Sources */,
 				618F54332BC2E88F0088BD2C /* RegistrationView.swift in Sources */,
