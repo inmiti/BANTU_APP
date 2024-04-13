@@ -48,6 +48,8 @@
 		61CBB0B32BCA65E300138F67 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CBB0B22BCA65E300138F67 /* LoaderView.swift */; };
 		61CBB0BA2BCA667800138F67 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CBB0B92BCA667800138F67 /* AlertView.swift */; };
 		61E62D222BC1A1CA00A5A6CF /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E62D212BC1A1CA00A5A6CF /* TabBarView.swift */; };
+		61EDCB0D2BCA905700D79608 /* HomeCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EDCB0C2BCA905700D79608 /* HomeCoachView.swift */; };
+		61EDCB0F2BCA906B00D79608 /* AgendaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EDCB0E2BCA906B00D79608 /* AgendaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		61CBB0B22BCA65E300138F67 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		61CBB0B92BCA667800138F67 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		61E62D212BC1A1CA00A5A6CF /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		61EDCB0C2BCA905700D79608 /* HomeCoachView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoachView.swift; sourceTree = "<group>"; };
+		61EDCB0E2BCA906B00D79608 /* AgendaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +380,7 @@
 		61C458E92BB83B6200AE8CF3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				61EDCB0C2BCA905700D79608 /* HomeCoachView.swift */,
 				6178BD0A2BC1940900257502 /* HomeClientView.swift */,
 			);
 			path = Home;
@@ -409,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				618F542E2BC2BDFC0088BD2C /* ImageHomeComponent.swift */,
+				61EDCB0E2BCA906B00D79608 /* AgendaView.swift */,
 			);
 			path = ViewsComponents;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 			files = (
 				6136569E2BB3361500DA8A71 /* Persistence.swift in Sources */,
 				610989BA2BC9905700A78684 /* TypeField.swift in Sources */,
+				61EDCB0F2BCA906B00D79608 /* AgendaView.swift in Sources */,
 				61C458DC2BB8397A00AE8CF3 /* CustomFieldView.swift in Sources */,
 				61C458E52BB839EA00AE8CF3 /* LoginViewModel.swift in Sources */,
 				618F542F2BC2BDFD0088BD2C /* ImageHomeComponent.swift in Sources */,
@@ -566,6 +573,7 @@
 				618F543C2BC2F81F0088BD2C /* Mocks.swift in Sources */,
 				6178BD0B2BC1940900257502 /* HomeClientView.swift in Sources */,
 				613656A12BB3361500DA8A71 /* Bantu_iOS.xcdatamodeld in Sources */,
+				61EDCB0D2BCA905700D79608 /* HomeCoachView.swift in Sources */,
 				61E62D222BC1A1CA00A5A6CF /* TabBarView.swift in Sources */,
 				613656952BB3361300DA8A71 /* Bantu_iOSApp.swift in Sources */,
 				610989BC2BC99BB900A78684 /* NetworkModel.swift in Sources */,
