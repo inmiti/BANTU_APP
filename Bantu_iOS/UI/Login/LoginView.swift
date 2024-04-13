@@ -35,12 +35,10 @@ struct LoginView: View {
                         .font(.system(size: 15))
                         .id(3)
                     VStack(alignment: .leading, spacing: 20){
-                        CustomTextFieldView(textComponent: loginViewModel.email,
-                                            isPassword: false,
-                                            isError: false, titletextField: "Your email")
-                        CustomTextFieldView(textComponent: loginViewModel.password,
-                                            isPassword: true,
-                                            isError: false, titletextField: "Your Password")
+                        CustomTextFieldView2(textComponent: loginViewModel.email,
+                                             isError: false, fieldType: .email)
+                        CustomTextFieldView2(textComponent: loginViewModel.password,
+                                             isError: false, fieldType: .password)
                     }
                     HStack(spacing: 110){
                         HStack(spacing: 4) {
@@ -59,13 +57,17 @@ struct LoginView: View {
                     //Login
                     VStack(spacing: 24) {
                         MainButton(textButton: "Sign in") {
-                            state = .home
+                            Task {
+                                await loginViewModel.login {
+                                    state = .home
+                                }
+                            }
                         }
                         .padding(.horizontal, 35)
                         
                         //Registration
                         Button {
-                            print("Create")
+                            
                         } label: {
                             Text("Create an account")
                                 .font(.system(size: 14))

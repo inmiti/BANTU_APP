@@ -17,5 +17,9 @@ struct User: Codable {
     let avatar: String?
     let email: String?
     let password: String?
-    
+}
+
+struct AuthResponse: Codable {
+    let accesToken: String?
+    let refreshToken: String?
 }
