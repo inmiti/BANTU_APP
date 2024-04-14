@@ -34,6 +34,7 @@ struct HomeClientView: View {
                     }
                 }
                 .padding(.horizontal)
+                AgendaView(numberOfItems: 3)
             }
         }
     }

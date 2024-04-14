@@ -6,6 +6,6 @@
 //
 
 import Foundation
-struct Country: Codable {
-    
+enum Country: String, Codable {
+    case España = "España"
 }
