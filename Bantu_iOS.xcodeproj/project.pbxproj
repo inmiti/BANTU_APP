@@ -35,6 +35,8 @@
 		618F54422BC2FACB0088BD2C /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54412BC2FACB0088BD2C /* Coach.swift */; };
 		618F54442BC2FAD70088BD2C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54432BC2FAD70088BD2C /* Country.swift */; };
 		618F54462BC2FAE40088BD2C /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54452BC2FAE40088BD2C /* Province.swift */; };
+		61C2EF832BCBD5EF00DB96F9 /* Professional_Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2EF822BCBD5EE00DB96F9 /* Professional_Type.swift */; };
+		61C2EF882BCBF03B00DB96F9 /* SearchCoachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2EF872BCBF03B00DB96F9 /* SearchCoachViewModel.swift */; };
 		61C458D82BB8394A00AE8CF3 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */; };
 		61C458DA2BB8396600AE8CF3 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458D92BB8396600AE8CF3 /* MainButton.swift */; };
 		61C458DC2BB8397A00AE8CF3 /* CustomFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458DB2BB8397A00AE8CF3 /* CustomFieldView.swift */; };
@@ -101,6 +103,8 @@
 		618F54412BC2FACB0088BD2C /* Coach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
 		618F54432BC2FAD70088BD2C /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		618F54452BC2FAE40088BD2C /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
+		61C2EF822BCBD5EE00DB96F9 /* Professional_Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional_Type.swift; sourceTree = "<group>"; };
+		61C2EF872BCBF03B00DB96F9 /* SearchCoachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoachViewModel.swift; sourceTree = "<group>"; };
 		61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		61C458D92BB8396600AE8CF3 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		61C458DB2BB8397A00AE8CF3 /* CustomFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldView.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				618F54262BC296AB0088BD2C /* SearchCoachView.swift */,
+				61C2EF872BCBF03B00DB96F9 /* SearchCoachViewModel.swift */,
 			);
 			path = "Search Coach";
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				618F54412BC2FACB0088BD2C /* Coach.swift */,
 				618F54432BC2FAD70088BD2C /* Country.swift */,
 				618F54452BC2FAE40088BD2C /* Province.swift */,
+				61C2EF822BCBD5EE00DB96F9 /* Professional_Type.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				61EDCB0F2BCA906B00D79608 /* AgendaView.swift in Sources */,
 				61C458DC2BB8397A00AE8CF3 /* CustomFieldView.swift in Sources */,
 				61C458E52BB839EA00AE8CF3 /* LoginViewModel.swift in Sources */,
+				61C2EF882BCBF03B00DB96F9 /* SearchCoachViewModel.swift in Sources */,
 				618F542F2BC2BDFD0088BD2C /* ImageHomeComponent.swift in Sources */,
 				618F54422BC2FACB0088BD2C /* Coach.swift in Sources */,
 				618F542D2BC296E50088BD2C /* SettingsView.swift in Sources */,
@@ -589,6 +596,7 @@
 				618F54332BC2E88F0088BD2C /* RegistrationView.swift in Sources */,
 				618F54402BC2FAC10088BD2C /* User.swift in Sources */,
 				61CBB0BA2BCA667800138F67 /* AlertView.swift in Sources */,
+				61C2EF832BCBD5EF00DB96F9 /* Professional_Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,9 +11,6 @@
         }
       }
     },
-    "Coach" : {
-
-    },
     "Create an account" : {
       "localizations" : {
         "es" : {
@@ -75,6 +72,9 @@
       }
     },
     "Parece que algo salió mal" : {
+
+    },
+    "Profesionales" : {
 
     },
     "Register" : {

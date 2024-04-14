@@ -54,7 +54,7 @@ final class LoginViewModel: ObservableObject {
          showErrorLogin = false
         loading = true
         let task = Task(priority: .utility) {
-            return try await networkResponse.login(email: "emsdfsdfail@email.com", password: "1234edd")
+            return try await networkResponse.login(email: "test@email.es", password: "password")
         }
         switch await task.result {
         case .success(let response):

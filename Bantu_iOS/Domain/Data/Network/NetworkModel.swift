@@ -7,6 +7,14 @@
 
 import Foundation
 
+//  Network.swift
+//  Bantu_iOS
+//
+//  Created by Silvia Casanova Martinez on 12/4/24.
+//
+
+import Foundation
+
 enum NetworkModel {
     case registerUser(user: User)
     case login(email: String, password: String)
@@ -41,10 +49,10 @@ extension NetworkModel {
     
     var method: HTTPMethod {
         switch self {
-        case .login,
-                .getCoach:
+        case .getCoach:
             return .get
-        case .registerUser:
+        case .login,
+                .registerUser:
             return .post
         case .updateUser:
             return .put
@@ -63,21 +71,23 @@ extension NetworkModel {
         case .registerUser(let user), .updateUser(let user):
             let user = user
             return try? JSONEncoder().encode(user)
-        case .login(let email, let password):
-            return try? JSONEncoder().encode(["email" : email, "password" : password])
         case .getCoach(let coach):
             let coach = coach
             return try? JSONEncoder().encode(coach)
+            
+        default: return nil
         }
     }
     
     var headers: [String: String]? {
         var header = NetworkModel.defaultHeaders
-        if let body {
-            header["Content-Length"] = "\(body.count)"
-        }
+
         switch self {
-            
+        case .login(let email, let passwd):
+            let loginString = "\(email):\(passwd)"
+            let loginData = loginString.data(using: String.Encoding.utf8)
+            let base64LoginString = loginData?.base64EncodedString()
+            header["Authorization"] = "Basic \(base64LoginString ?? "")"
         default: ()
         }
         return header
@@ -101,7 +111,7 @@ enum HTTPMethod: String {
 extension URLRequest {
     static func request(networkRequest: NetworkModel) -> URLRequest {
         var bodyString = ""
-        var comps = URLComponents(string: networkRequest.baseURL)
+        var comps = URLComponents(string: networkRequest.bantuURL)
         comps?.path = networkRequest.path
         var request = URLRequest(url: (comps?.url)!)
         if let query = networkRequest.query {
@@ -118,6 +128,3 @@ extension URLRequest {
         return request
     }
 }
-
-
-
