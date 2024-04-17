@@ -6,6 +6,7 @@
 //
 
 import Foundation
-enum Country: String, Codable {
-    case España = "España"
+struct Country: Codable {
+   let country_id: String
+   let country: String
 }

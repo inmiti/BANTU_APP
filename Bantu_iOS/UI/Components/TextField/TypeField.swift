@@ -11,5 +11,10 @@ enum FieldType {
     case email
     case password
     case username
+    case country
+    case province
+    case clientOrCoach
+   
+    
 }
 

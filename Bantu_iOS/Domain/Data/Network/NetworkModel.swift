@@ -18,8 +18,10 @@ import Foundation
 enum NetworkModel {
     case registerUser(user: User)
     case login(email: String, password: String)
-    case getCoach(coach: [Coach])
     case updateUser(user: User)
+    case getAllCountries
+    case getProvinces
+    case getCouches
 }
 
 extension NetworkModel {
@@ -28,8 +30,10 @@ extension NetworkModel {
     var baseURL: String {
         switch self {
         case .login,
-                .getCoach,
                 .registerUser,
+                .getAllCountries,
+                .getProvinces,
+                .getCouches,
                 .updateUser:
             return bantuURL
         }
@@ -38,24 +42,31 @@ extension NetworkModel {
         switch self {
         case .login:
             return "/api/auth/signin"
-        case .getCoach:
-            return ""
         case .registerUser:
+            return "/api/auth/signup"
+        case .getAllCountries:
             return ""
         case .updateUser:
+            return ""
+        case .getProvinces:
+            return "/api/provinces/all"
+        case .getCouches:
             return ""
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getCoach:
+        case .getAllCountries,
+                .getProvinces,
+                .getCouches :
             return .get
         case .login,
                 .registerUser:
             return .post
         case .updateUser:
             return .put
+     
         }
     }
     
@@ -71,9 +82,6 @@ extension NetworkModel {
         case .registerUser(let user), .updateUser(let user):
             let user = user
             return try? JSONEncoder().encode(user)
-        case .getCoach(let coach):
-            let coach = coach
-            return try? JSONEncoder().encode(coach)
             
         default: return nil
         }

@@ -7,9 +7,9 @@
 
 import Foundation
 struct User: Codable {
-    let first_name: String?
-    let last_name1: String?
-    let last_name2: String?
+    let name: String?
+    let lastName1: String?
+    let lastName2: String?
     let country: Country?
     let province: Province?
     let city: String?

@@ -13,4 +13,7 @@ final class RegistrationViewModel: ObservableObject {
     @Published var username = ""
     @Published var email = ""
     @Published var password = ""
+    @Published var country = ""
+    @Published var province = ""
+    @Published var clientOrCoach = ""
 }

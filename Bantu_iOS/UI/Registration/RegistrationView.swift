@@ -21,7 +21,7 @@ struct RegistrationView: View {
             VStack (spacing:11){
                 Image(decorative: "Icon2")
                     .resizable()
-                    .frame(width: 150, height: 150)
+                    .frame(width:80, height: 80)
                 Text("Register")
                     .font(.system(size: 28))
                     .bold()
@@ -34,19 +34,31 @@ struct RegistrationView: View {
                 VStack(alignment: .leading, spacing: 20){
                     CustomTextFieldView2(
                         textComponent: viewModel.username,
-                        isError: true,
+                        isError: false,
                         fieldType: .username)
                     
                     CustomTextFieldView2(
                         textComponent: viewModel.email,
-                        isError: true,
+                        isError: false,
                         fieldType: .email
                     )
                     
                     CustomTextFieldView2(
-                        textComponent: viewModel.password,
-                        isError: true,
-                        fieldType: .password
+                        textComponent: viewModel.country,
+                        isError: false,
+                        fieldType: .country
+                
+                        )
+                    CustomTextFieldView2(
+                        textComponent: viewModel.province,
+                        isError: false,
+                        fieldType: .province
+                
+                        )
+                    CustomTextFieldView2(
+                        textComponent: viewModel.clientOrCoach,
+                        isError: false,
+                        fieldType: .clientOrCoach
                 
                         )
                     
