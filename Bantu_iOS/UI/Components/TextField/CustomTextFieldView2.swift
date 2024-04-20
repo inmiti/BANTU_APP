@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CustomTextFieldView2: View {
-    @State  var textComponent: String
-    @State var isError: Bool
-    @State var fieldType: FieldType
+    @Binding var textComponent: String
+    @Binding var isError: Bool
+    let fieldType: FieldType
    
     var body: some View {
       
@@ -27,7 +27,7 @@ struct CustomTextFieldView2: View {
                         .stroke(Color.bantu_pink, lineWidth: 1)
                 )
               
-            if isError == true {
+            if isError {
                 Text("¡¡ Correo incorrecto !!")
                     .font(.system(size: 12))
                     .foregroundColor(.red)
@@ -40,8 +40,8 @@ struct CustomTextFieldView2: View {
 
 struct CustomTextFieldView2_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextFieldView2(textComponent: "hola@gmail.com",
-                             isError: true,
+        CustomTextFieldView2(textComponent: .constant("hola@gmail.com"),
+                             isError: .constant(true),
                              fieldType: .email
                             )
     }

@@ -6,17 +6,12 @@
 //
 
 import Foundation
+
 struct User: Codable {
-    let name: String?
-    let lastName1: String?
-    let lastName2: String?
-    let country: Country?
-    let province: Province?
-    let city: String?
-    let postal_code: Int?
-    let avatar: String?
+    let nickName: String?
     let email: String?
     let password: String?
+    let professional: Bool?
 }
 
 struct AuthResponse: Codable {

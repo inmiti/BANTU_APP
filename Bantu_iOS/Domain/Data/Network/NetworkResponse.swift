@@ -14,7 +14,11 @@ final class NetworkResponse {
         try await checkResponse(request: .request(networkRequest: .login(email: email, password: password)), type: AuthResponse.self)
     }
     
-    /// Método para obtener un JSON lanzando una petición asíncrona y controlando los errores
+    func registerUser(user: User) async throws -> VoidResponse{
+        try await checkResponse(request: .request(networkRequest: .registerUser(user: user)), type: VoidResponse.self)
+    }
+    
+    // Método para obtener un JSON lanzando una petición asíncrona y controlando los errores
     func checkResponse<T: Codable>(request: URLRequest,
                                    type: T.Type,
                                    decoder: JSONDecoder = JSONDecoder()) async throws -> T {

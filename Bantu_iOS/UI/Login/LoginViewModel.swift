@@ -12,8 +12,16 @@ final class LoginViewModel: ObservableObject {
 
     let networkResponse = NetworkResponse.shared
     // MARK: - Properties -
-    @Published var email = ""
-    @Published var password = ""
+    @Published var email = "" {
+        didSet {
+            showErrorEmail = !validateEmail()
+        }
+    }
+    @Published var password = "" {
+        didSet {
+            showErrorPassword = invalidatePassword()
+        }
+    }
     @Published var rememberMe = false
     @Published var fieldType: FieldType = .email
     
@@ -26,31 +34,17 @@ final class LoginViewModel: ObservableObject {
     // MARK: - Functions -
     
     func validateFields() -> Bool {
-        return true
+        validateEmail() && !invalidatePassword()
+    }
+   func validateEmail() -> Bool {
+       email.contains("@") && email.contains(".")
     }
     
-    func validateEmail() -> Bool {
-        if email.contains("@"), email.contains(".") {
-            return true
-        } else {
-            showErrorEmail = true
-            return false
-            // Email incorrecto
-        }
+     func invalidatePassword() -> Bool {
+         password.count < 6
     }
     
-    func validatePassword() -> Bool {
-        if password.count > 4 {
-            return true
-        } else {
-            showErrorPassword = true
-            return false
-            // Contraseña debe tener más de 4 caracteres
-        }
-    }
-    
-    /// Método para comprobar si el usuario existe y obtener sus datos
-    func login(completion: () -> ()) async {
+   func login(completion: () -> ()) async {
          showErrorLogin = false
         loading = true
         let task = Task(priority: .utility) {

@@ -82,7 +82,7 @@ extension NetworkModel {
         case .registerUser(let user), .updateUser(let user):
             let user = user
             return try? JSONEncoder().encode(user)
-            
+         
         default: return nil
         }
     }

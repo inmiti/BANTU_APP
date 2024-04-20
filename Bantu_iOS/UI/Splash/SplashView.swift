@@ -12,6 +12,7 @@ enum ViewState {
     case splash
     case login
     case home
+    case register
 }
 
 struct SplashView: View {
@@ -28,6 +29,8 @@ struct SplashView: View {
                 LoginView(state: $viewState)
             case .home:
                TabBarView()
+            case .register:
+                RegistrationView(state: $viewState)
             }
         }
     }

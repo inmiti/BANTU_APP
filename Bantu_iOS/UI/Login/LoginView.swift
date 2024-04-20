@@ -13,6 +13,7 @@ struct LoginView: View {
     @Environment(\.colorScheme) var colorScheme
     @Binding var state: ViewState
     
+    
     var body: some View {
         
         NavigationView {
@@ -35,10 +36,12 @@ struct LoginView: View {
                         .font(.system(size: 15))
                         .id(3)
                     VStack(alignment: .leading, spacing: 20){
-                        CustomTextFieldView2(textComponent: loginViewModel.email,
-                                             isError: false, fieldType: .email)
-                        CustomTextFieldView2(textComponent: loginViewModel.password,
-                                             isError: false, fieldType: .password)
+                        CustomTextFieldView2(textComponent: $loginViewModel.email,
+                                             isError: $loginViewModel.showErrorEmail, 
+                                             fieldType: .email)
+                        CustomTextFieldView2(textComponent: $loginViewModel.password,
+                                             isError: $loginViewModel.showErrorPassword,
+                                             fieldType: .password)
                     }
                     HStack(spacing: 110){
                         HStack(spacing: 4) {
@@ -64,10 +67,11 @@ struct LoginView: View {
                             }
                         }
                         .padding(.horizontal, 35)
+                        .disabled(!loginViewModel.validateFields())
                         
                         //Registration
                         Button {
-                            
+                           state = .register
                         } label: {
                             Text("Create an account")
                                 .font(.system(size: 14))

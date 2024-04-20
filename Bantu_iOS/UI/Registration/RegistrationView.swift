@@ -8,9 +8,16 @@
 
 import SwiftUI
 
+enum TypeProfessional: String, CaseIterable {
+    case professional = "Profesional"
+    case noProfessional = "No Profesional"
+}
+
 struct RegistrationView: View {
+    @State private var selectedType: TypeProfessional = .professional
+    @State private var isPickerVisible = false
     @StateObject var viewModel = RegistrationViewModel()
-    
+    @Binding var state: ViewState
     var body: some View {
         ZStack{
             Image(decorative:"")
@@ -33,37 +40,51 @@ struct RegistrationView: View {
                 
                 VStack(alignment: .leading, spacing: 20){
                     CustomTextFieldView2(
-                        textComponent: viewModel.username,
-                        isError: false,
-                        fieldType: .username)
+                        textComponent: $viewModel.nickName,
+                        isError: .constant(false),
+                        fieldType: .username
+                    )
                     
                     CustomTextFieldView2(
-                        textComponent: viewModel.email,
-                        isError: false,
+                        textComponent: $viewModel.email,
+                        isError: .constant(false),
                         fieldType: .email
                     )
                     
                     CustomTextFieldView2(
-                        textComponent: viewModel.country,
-                        isError: false,
-                        fieldType: .country
-                
-                        )
-                    CustomTextFieldView2(
-                        textComponent: viewModel.province,
-                        isError: false,
-                        fieldType: .province
-                
-                        )
-                    CustomTextFieldView2(
-                        textComponent: viewModel.clientOrCoach,
-                        isError: false,
-                        fieldType: .clientOrCoach
-                
-                        )
+                        textComponent: $viewModel.password,
+                        isError: .constant(false),
+                        fieldType: .password
+                    )
+                    
+                    VStack {
+                        CustomTextFieldView2(
+                            textComponent: $viewModel.password,
+                            isError: .constant(false),
+                            fieldType: .clientOrCoach
+                    )
+                            .onTapGesture {
+                                isPickerVisible.toggle()
+                            }
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                        if isPickerVisible {
+                            Picker(selection: $selectedType, label: Text("")) {
+                                ForEach(TypeProfessional.allCases, id: \.self) { type in
+                                    Text(type.rawValue).tag(type)
+                                }
+                            }
+                            .pickerStyle(DefaultPickerStyle())
+                            .labelsHidden()
+                        }
+                    }
                     
                     MainButton(textButton: "Sign in") {
-                        //TODO Accion
+                        //                        Task {
+                        //                            await viewModel.registerUser {
+                        //                                state = .login
+                        //                            }
+                        //                        }
                     }
                     .padding([.leading, .trailing], 35)
                 }
@@ -73,10 +94,9 @@ struct RegistrationView: View {
     }
 }
 
-
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationView()
+        RegistrationView(state: .constant(.register))
     }
 }
 
