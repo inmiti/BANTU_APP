@@ -7,35 +7,64 @@
 
 import Foundation
 
-enum TypeId: String, CaseIterable {
+enum NameProfessional: String, CaseIterable {
     case nutricionista = "Nutricionista"
     case entrenador = "Entrenador Personal"
     case fisioterapeuta = "Fisioterapeuta"
-    case otros = "Otros"
+    case dietista = "Otros"
 }
 
+@MainActor
 final class SearchCoachViewModel: ObservableObject {
-    @Published var coachers = []
+    let networkResponse = NetworkResponse.shared
     
-    @Published var filteredCoachers = [Coach]()
-    
-    @Published var coachersType: TypeId = .entrenador {
+    @Published var isLoading = false
+    @Published var users: [UserMock] = []
+    //@Published var professionals: [Coach] = []
+    @Published var professionals = [Professional]()
+    @Published var filteredCoachers: [Professional] = [.coachTest]
+    @Published var coachersType: NameProfessional = .entrenador {
         didSet {
-            // filteredCoachers = filterCoachBy()
+            filteredCoachers = filterCoachBy()
+        }
+    }
+    init() {
+        Task {
+           await getProfessionals()
+            print(professionals)
         }
     }
     
-//    func filterCoachBy() -> [Coach] {
-//        switch coachersType {
-//        case .nutricionista:
-//            return coachers.filter {$0.type_id == 1}
-//        case .entrenador:
-//            return coachers.filter {$0.type_id == 2}
-//        case .fisioterapeuta:
-//            return coachers.filter {$0.type_id == 3}
-//        case .otros:
-//            return coachers.filter {$0.type_id == 4}
-//        }
-//    }
+    func getProfessionals() async  {
+        guard let token = KeyChain.shared.getToken() else { return }
+        print(token)
+        let task = Task(priority: .background) {
+                return try await networkResponse.getProfessionals(token: token)
+            }
+        switch await task.result {
+            case .success(let response):
+            professionals = response
+            print(professionals)
+            case .failure(let error as NetworkErrors):
+                print("error")
+            case .failure(_):
+                print("error")
+            }
+        isLoading = false
+    }
+    
+    func filterCoachBy() -> [Professional] {
+        switch coachersType {
+        case .entrenador:
+            return professionals.filter {$0.coachType == .coach}
+        case .nutricionista:
+            return professionals.filter {$0.coachType == .nutricionist}
+        case .dietista:
+            return professionals.filter {$0.coachType == .dietist}
+        case .fisioterapeuta:
+            return professionals.filter {$0.coachType == .fisio}
+     
+        }
+    }
 }
 

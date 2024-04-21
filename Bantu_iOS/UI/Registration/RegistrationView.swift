@@ -18,6 +18,7 @@ struct RegistrationView: View {
     @State private var isPickerVisible = false
     @StateObject var viewModel = RegistrationViewModel()
     @Binding var state: ViewState
+    let options = ["Si", "No"]
     var body: some View {
         ZStack{
             Image(decorative:"")
@@ -57,27 +58,11 @@ struct RegistrationView: View {
                         fieldType: .password
                     )
                     
-                    VStack {
-                        CustomTextFieldView2(
-                            textComponent: $viewModel.password,
-                            isError: .constant(false),
-                            fieldType: .clientOrCoach
+                    CustomTextFieldView2(
+                        textComponent: $viewModel.password,
+                        isError: .constant(false),
+                        fieldType: .dropdown(options: options)
                     )
-                            .onTapGesture {
-                                isPickerVisible.toggle()
-                            }
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        if isPickerVisible {
-                            Picker(selection: $selectedType, label: Text("")) {
-                                ForEach(TypeProfessional.allCases, id: \.self) { type in
-                                    Text(type.rawValue).tag(type)
-                                }
-                            }
-                            .pickerStyle(DefaultPickerStyle())
-                            .labelsHidden()
-                        }
-                    }
                     
                     MainButton(textButton: "Sign in") {
                         //                        Task {

@@ -67,7 +67,7 @@ struct LoginView: View {
                             }
                         }
                         .padding(.horizontal, 35)
-                        .disabled(!loginViewModel.validateFields())
+                        //.disabled(!loginViewModel.validateFields())
                         
                         //Registration
                         Button {

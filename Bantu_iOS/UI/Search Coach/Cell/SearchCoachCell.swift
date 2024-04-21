@@ -8,23 +8,21 @@
 import SwiftUI
 
 struct SearchCoachCell: View {
-    let nickName: String = "Personaje"
-        let coachDescription: String = "Esto es una descripción de un profesional con más de 10 años de experiencia. Buscando la mejor solución para mis clientes"
+   
+    @State  var nickName: String
+    @State var coachDescription: String
+    @State var photo: String
         
         var body: some View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.grey_cell)
                 .overlay(
                     HStack {
-                        Image(.foto)
+                        Image(.ragnarLothbrok)
+//                        AsyncImage(url: URL(string: photo))
                             .frame(width: 70, height: 70)
                             .clipShape(Circle())
-                            .padding()
-                        
-//                        AsyncImage(url: URL(string: "https://http://90.163.132.130:8090/bantu/user00.png"))
-//                            .frame(width: 70, height: 70)
-//                            .clipShape(Circle())
-//                            .padding()
+                           .padding()
                         
                         VStack(alignment: .leading) {
                             Text(nickName)
@@ -41,6 +39,6 @@ struct SearchCoachCell: View {
         }}
 
 #Preview {
-    SearchCoachCell()
+    SearchCoachCell(nickName: "Silvia", coachDescription: "Esto es una breve descripción", photo: "hkdchsckjhcskj")
 }
 

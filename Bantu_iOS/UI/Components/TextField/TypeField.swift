@@ -13,7 +13,7 @@ enum FieldType {
     case username
     case country
     case province
-    case clientOrCoach
+    case dropdown(options: [String])
    
     
 }

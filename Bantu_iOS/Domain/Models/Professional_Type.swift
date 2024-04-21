@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Professional_Type {
+struct ProfessionalType {
     let type_id: Int?
     let type: String?
 

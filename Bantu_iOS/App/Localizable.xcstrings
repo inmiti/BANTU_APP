@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    " Ha ocurrido un error " : {
+
+    },
     "¡¡ Correo incorrecto !!" : {
       "localizations" : {
         "es" : {
@@ -10,6 +16,9 @@
           }
         }
       }
+    },
+    "Button" : {
+
     },
     "Create an account" : {
       "localizations" : {

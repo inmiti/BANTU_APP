@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomFieldView2: View {
     var type: FieldType
     @Binding var text: String
+    @State private var selection: String = ""
     
     var body: some View {
         switch type {
@@ -32,55 +33,57 @@ struct CustomFieldView2: View {
             
         case .country:
             return AnyView(
-            commonTextField("Your country", imageName: "mappin.and.ellipse.circle")
-        )
+                commonTextField("Your country", imageName: "mappin.and.ellipse.circle")
+            )
         case .province:
             return AnyView(
-            commonTextField("Your province", imageName: "mappin.and.ellipse.circle")
-        )
-        case .clientOrCoach:
+                commonTextField("Your province", imageName: "mappin.and.ellipse.circle")
+            )
+        case .dropdown(let options):
             return AnyView(
-            commonTextField("Coach or Profesional", imageName: "dumbbell.fill")
-        )
-    }
-        
-        func commonTextField(_ placeholder: String, imageName: String) -> some View {
-            TextField(placeholder, text: $text)
+                Picker(selection: $selection, label: Text("")) {
+                    ForEach(options, id: \.self) { option in
+                        Text(option).tag(option)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
                 .padding(.leading, 40)
-                .overlay(
-                    commonImageOverlay(imageName)
-                )
-                .background(Color.white)
-                .frame(height: 62)
-                .keyboardType(.emailAddress)
-                .background(Color.white)
-                .cornerRadius(30)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .opacity(0.8)
-        }
-        
-        func commonImageOverlay(_ imageName: String) -> some View {
-            HStack {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
-                    .frame(width: 20, height: 20)
-                    .padding(.leading, 10)
-                Spacer()
-            }
+            )
         }
     }
     
-    struct CustomFieldView2_Previews: PreviewProvider {
-        static var previews: some View {
-            CustomFieldView2(
-                type:.email,
-                text: .constant("test@gmail.com"))
+    func commonTextField(_ placeholder: String, imageName: String) -> some View {
+        TextField(placeholder, text: $text)
+            .padding(.leading, 40)
+            .overlay(
+                commonImageOverlay(imageName)
+            )
+            .background(Color.white)
+            .frame(height: 62)
+            .keyboardType(.emailAddress)
+            .background(Color.white)
+            .cornerRadius(30)
+            .textInputAutocapitalization(.never)
+            .autocorrectionDisabled()
+            .opacity(0.8)
+    }
+    
+    func commonImageOverlay(_ imageName: String) -> some View {
+        HStack {
+            Image(systemName: imageName)
+                .foregroundColor(.gray)
+                .frame(width: 20, height: 20)
+                .padding(.leading, 10)
+            Spacer()
         }
     }
 }
+
+
 #Preview {
-        CustomFieldView(textComponent:  .constant("test@hotmail.com"), isPassword: .constant(true))
+    CustomFieldView2(
+        type:.dropdown(options: ["Si", "No"]),
+        text: .constant("¿Eres profesional? "))
     }
 
 

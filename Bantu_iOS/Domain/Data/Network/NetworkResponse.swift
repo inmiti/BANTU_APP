@@ -18,6 +18,9 @@ final class NetworkResponse {
         try await checkResponse(request: .request(networkRequest: .registerUser(user: user)), type: VoidResponse.self)
     }
     
+    func getProfessionals(token: String) async throws -> [Professional] {
+        try await checkResponse(request: .request(networkRequest: .getProfessionals(token: token)), type: [Professional].self)
+    }
     // Método para obtener un JSON lanzando una petición asíncrona y controlando los errores
     func checkResponse<T: Codable>(request: URLRequest,
                                    type: T.Type,

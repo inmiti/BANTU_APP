@@ -24,12 +24,11 @@ final class LoginViewModel: ObservableObject {
     }
     @Published var rememberMe = false
     @Published var fieldType: FieldType = .email
-    
     @Published var loading = false
     @Published var showErrorEmail = false
     @Published var showErrorPassword = false
     @Published var showErrorLogin = false
-    
+    var token: String = ""
     
     // MARK: - Functions -
     
@@ -48,10 +47,13 @@ final class LoginViewModel: ObservableObject {
          showErrorLogin = false
         loading = true
         let task = Task(priority: .utility) {
-            return try await networkResponse.login(email: "test@email.es", password: "password")
+            return try await networkResponse.login(email: email, password: password)
         }
         switch await task.result {
         case .success(let response):
+            token = response.accesToken ?? ""
+            print(token)
+            onLoginResponse()
             completion()
         case .failure(let error as NetworkErrors):
             showErrorLogin = true
@@ -60,5 +62,9 @@ final class LoginViewModel: ObservableObject {
         }
         loading = false
     }
+    
+    private func onLoginResponse() {
+        KeyChain.shared.save(token: token)
+     }
     
 }

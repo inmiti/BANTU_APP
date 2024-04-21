@@ -7,21 +7,13 @@
 
 import Foundation
 
-//  Network.swift
-//  Bantu_iOS
-//
-//  Created by Silvia Casanova Martinez on 12/4/24.
-//
-
-import Foundation
-
 enum NetworkModel {
     case registerUser(user: User)
     case login(email: String, password: String)
     case updateUser(user: User)
     case getAllCountries
     case getProvinces
-    case getCouches
+    case getProfessionals(token: String)
 }
 
 extension NetworkModel {
@@ -33,7 +25,7 @@ extension NetworkModel {
                 .registerUser,
                 .getAllCountries,
                 .getProvinces,
-                .getCouches,
+                .getProfessionals,
                 .updateUser:
             return bantuURL
         }
@@ -50,8 +42,8 @@ extension NetworkModel {
             return ""
         case .getProvinces:
             return "/api/provinces/all"
-        case .getCouches:
-            return ""
+        case .getProfessionals:
+            return "/api/professionals/all"
         }
     }
     
@@ -59,7 +51,7 @@ extension NetworkModel {
         switch self {
         case .getAllCountries,
                 .getProvinces,
-                .getCouches :
+                .getProfessionals:
             return .get
         case .login,
                 .registerUser:
@@ -82,7 +74,6 @@ extension NetworkModel {
         case .registerUser(let user), .updateUser(let user):
             let user = user
             return try? JSONEncoder().encode(user)
-         
         default: return nil
         }
     }
@@ -96,7 +87,10 @@ extension NetworkModel {
             let loginData = loginString.data(using: String.Encoding.utf8)
             let base64LoginString = loginData?.base64EncodedString()
             header["Authorization"] = "Basic \(base64LoginString ?? "")"
-        default: ()
+       
+        case .getProfessionals(let token):
+              header["Authorization"] = "Bearer \(token)"
+        default:()
         }
         return header
     }
@@ -131,6 +125,7 @@ extension URLRequest {
         }
         request.httpMethod = networkRequest.method.rawValue
         request.allHTTPHeaderFields = networkRequest.headers
+      
         print("💡 Headers: \(request.allHTTPHeaderFields ?? ["":""])")
         print("🚀", networkRequest.method.rawValue, comps?.url ?? "", networkRequest.query ?? "", bodyString)
         return request
