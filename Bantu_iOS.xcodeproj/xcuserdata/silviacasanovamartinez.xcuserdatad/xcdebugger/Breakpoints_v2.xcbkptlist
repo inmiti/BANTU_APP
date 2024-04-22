@@ -7,123 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BEA8B8A1-268B-4018-954C-8019F934E3E8"
-            shouldBeEnabled = "Yes"
+            uuid = "915A3A14-D892-4F17-90EA-AB2631AC63EF"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bantu_iOS/UI/Search Coach/SearchCoachViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "getProfessionals()"
-            landmarkType = "7">
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "searchText"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "BEA8B8A1-268B-4018-954C-8019F934E3E8 - 28dfd08f7611cd46"
+                  uuid = "915A3A14-D892-4F17-90EA-AB2631AC63EF - e1e4aca000615851"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Bantu_iOS.SearchCoachViewModel.getProfessionals() async -&gt; ()"
+                  symbolName = "Bantu_iOS.SearchCoachViewModel.searchText.didset : Swift.String"
                   moduleName = "Bantu_iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/silviacasanovamartinez/Desktop/Bantu_iOS/Bantu_iOS/UI/Search%20Coach/SearchCoachViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
                </Location>
                <Location
-                  uuid = "BEA8B8A1-268B-4018-954C-8019F934E3E8 - da665370111f8188"
+                  uuid = "915A3A14-D892-4F17-90EA-AB2631AC63EF - c4c279a2b58197aa"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Bantu_iOS.SearchCoachViewModel.getProfessionals() async -&gt; ()"
+                  symbolName = "closure #1 (Bantu_iOS.Professional) -&gt; Swift.Bool in Bantu_iOS.SearchCoachViewModel.searchText.didset : Swift.String"
                   moduleName = "Bantu_iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/silviacasanovamartinez/Desktop/Bantu_iOS/Bantu_iOS/UI/Search%20Coach/SearchCoachViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AFA26290-0089-4A81-A16A-DCA44319B1A1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bantu_iOS/UI/Search Coach/SearchCoachViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getProfessionals()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AFA26290-0089-4A81-A16A-DCA44319B1A1 - 28dfd08f7611cd84"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Bantu_iOS.SearchCoachViewModel.getProfessionals() async -&gt; ()"
-                  moduleName = "Bantu_iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silviacasanovamartinez/Desktop/Bantu_iOS/Bantu_iOS/UI/Search%20Coach/SearchCoachViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41">
-               </Location>
-               <Location
-                  uuid = "AFA26290-0089-4A81-A16A-DCA44319B1A1 - a23c18cd5413193d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable () async throws -&gt; Swift.Array&lt;Bantu_iOS.Professional&gt; in Bantu_iOS.SearchCoachViewModel.getProfessionals() async -&gt; ()"
-                  moduleName = "Bantu_iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silviacasanovamartinez/Desktop/Bantu_iOS/Bantu_iOS/UI/Search%20Coach/SearchCoachViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41">
-               </Location>
-               <Location
-                  uuid = "AFA26290-0089-4A81-A16A-DCA44319B1A1 - 145e992f804b1984"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async throws -&gt; Swift.Array&lt;Bantu_iOS.Professional&gt; in Bantu_iOS.SearchCoachViewModel.getProfessionals() async -&gt; ()"
-                  moduleName = "Bantu_iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silviacasanovamartinez/Desktop/Bantu_iOS/Bantu_iOS/UI/Search%20Coach/SearchCoachViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5A5C504A-A59B-486F-BC78-D55A1D37BB6D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bantu_iOS/UI/Search Coach/SearchCoachViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "getProfessionals()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

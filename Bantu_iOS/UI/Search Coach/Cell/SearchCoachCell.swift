@@ -18,8 +18,7 @@ struct SearchCoachCell: View {
                 .fill(Color.grey_cell)
                 .overlay(
                     HStack {
-                        Image(.ragnarLothbrok)
-//                        AsyncImage(url: URL(string: photo))
+                       AsyncImage(url: URL(string: photo))
                             .frame(width: 70, height: 70)
                             .clipShape(Circle())
                            .padding()
@@ -34,7 +33,7 @@ struct SearchCoachCell: View {
                     }
                 )
                 .frame(height: 99)
-                .padding(12)
+                .padding()
                 .shadow(radius: 5)
         }}
 

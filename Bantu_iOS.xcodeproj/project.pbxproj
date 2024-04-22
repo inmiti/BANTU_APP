@@ -38,6 +38,7 @@
 		618F54422BC2FACB0088BD2C /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54412BC2FACB0088BD2C /* Professional.swift */; };
 		618F54442BC2FAD70088BD2C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54432BC2FAD70088BD2C /* Country.swift */; };
 		618F54462BC2FAE40088BD2C /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54452BC2FAE40088BD2C /* Province.swift */; };
+		61A506AF2BD6F1B700BE68EC /* ButtonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A506AE2BD6F1B700BE68EC /* ButtonFilter.swift */; };
 		61AEE2CB2BD2CCFB009D7890 /* SearchCoachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEE2CA2BD2CCFB009D7890 /* SearchCoachCell.swift */; };
 		61C2EF832BCBD5EF00DB96F9 /* Professional_Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2EF822BCBD5EE00DB96F9 /* Professional_Type.swift */; };
 		61C2EF882BCBF03B00DB96F9 /* SearchCoachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2EF872BCBF03B00DB96F9 /* SearchCoachViewModel.swift */; };
@@ -113,6 +114,7 @@
 		618F54412BC2FACB0088BD2C /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		618F54432BC2FAD70088BD2C /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		618F54452BC2FAE40088BD2C /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
+		61A506AE2BD6F1B700BE68EC /* ButtonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFilter.swift; sourceTree = "<group>"; };
 		61AEE2CA2BD2CCFB009D7890 /* SearchCoachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoachCell.swift; sourceTree = "<group>"; };
 		61C2EF822BCBD5EE00DB96F9 /* Professional_Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional_Type.swift; sourceTree = "<group>"; };
 		61C2EF872BCBF03B00DB96F9 /* SearchCoachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoachViewModel.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 			children = (
 				61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */,
 				61C458D92BB8396600AE8CF3 /* MainButton.swift */,
+				61A506AE2BD6F1B700BE68EC /* ButtonFilter.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				610989BA2BC9905700A78684 /* TypeField.swift in Sources */,
 				61EDCB0F2BCA906B00D79608 /* AgendaView.swift in Sources */,
 				61C458DC2BB8397A00AE8CF3 /* CustomFieldView.swift in Sources */,
+				61A506AF2BD6F1B700BE68EC /* ButtonFilter.swift in Sources */,
 				61C458E52BB839EA00AE8CF3 /* LoginViewModel.swift in Sources */,
 				61C2EF882BCBF03B00DB96F9 /* SearchCoachViewModel.swift in Sources */,
 				612E339D2BD528DB00D2F2D3 /* KeyChain.swift in Sources */,

@@ -8,10 +8,16 @@
 import Foundation
 
 struct User: Codable {
-    let nickName: String?
-    let email: String?
-    let password: String?
-    let professional: Bool?
+    var name: String?
+    var lastName1: String?
+    var lastName2: String?
+    var postalCode: String?
+    var email: String?
+    var city: String?
+    var photo: String?
+    var password: String?
+    var active: Bool?
+
 }
 
 struct AuthResponse: Codable {

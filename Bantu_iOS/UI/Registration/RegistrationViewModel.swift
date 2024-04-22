@@ -48,7 +48,7 @@ final class RegistrationViewModel: ObservableObject {
         func registerUser(completion: () -> ()) async {
             loading = true
             let task = Task(priority: .utility) {
-                return try await networkResponse.registerUser(user: User(nickName: nickName, email: email, password: password, professional: professional))
+//                return try await networkResponse.registerUser(user: User(nickName: nickName, email: email, password: password, professional: professional))
             }
             switch await task.result {
             case .success(let response):

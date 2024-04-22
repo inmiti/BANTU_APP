@@ -6,24 +6,27 @@
 //
 
 import Foundation
-
-enum NameProfessional: String, CaseIterable {
+enum NameProfessional: String {
+    case entrenador = "Entrenador"
     case nutricionista = "Nutricionista"
-    case entrenador = "Entrenador Personal"
+    case dietista = "Dietista"
     case fisioterapeuta = "Fisioterapeuta"
-    case dietista = "Otros"
 }
 
 @MainActor
 final class SearchCoachViewModel: ObservableObject {
     let networkResponse = NetworkResponse.shared
-    
+   
     @Published var isLoading = false
     @Published var users: [UserMock] = []
-    //@Published var professionals: [Coach] = []
+    @Published var searchText = "" {
+        didSet {
+            filteredCoachers = professionals.filter {($0.user?.name ?? "").lowercased().hasPrefix(searchText.lowercased())}
+        }
+    }
     @Published var professionals = [Professional]()
-    @Published var filteredCoachers: [Professional] = [.coachTest]
-    @Published var coachersType: NameProfessional = .entrenador {
+    @Published var filteredCoachers: [Professional] = []
+    @Published var coachersType: CoachType = .entrenador {
         didSet {
             filteredCoachers = filterCoachBy()
         }
@@ -44,9 +47,9 @@ final class SearchCoachViewModel: ObservableObject {
         switch await task.result {
             case .success(let response):
             professionals = response
-            print(professionals)
+            print("los prog \(professionals)")
             case .failure(let error as NetworkErrors):
-                print("error")
+                print("error \(error)")
             case .failure(_):
                 print("error")
             }
@@ -56,15 +59,28 @@ final class SearchCoachViewModel: ObservableObject {
     func filterCoachBy() -> [Professional] {
         switch coachersType {
         case .entrenador:
-            return professionals.filter {$0.coachType == .coach}
+            return professionals.filter {$0.id == 1}
         case .nutricionista:
-            return professionals.filter {$0.coachType == .nutricionist}
+            return professionals.filter {$0.id == 2}
         case .dietista:
-            return professionals.filter {$0.coachType == .dietist}
+            return professionals.filter {$0.id == 3}
         case .fisioterapeuta:
-            return professionals.filter {$0.coachType == .fisio}
-     
+            return professionals.filter {$0.id == 4}
+        default:
+            return professionals
         }
+    }
+    
+    
+    func filteredItems(_ searchText: String) -> [String] {
+            let items = professionals.compactMap { professional in
+                professional.user?.name
+            }
+            if searchText.isEmpty {
+                return items
+            } else {
+                return items.filter { $0.localizedCaseInsensitiveContains(searchText) }
+            }
     }
 }
 

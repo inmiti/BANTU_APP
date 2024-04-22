@@ -6,8 +6,19 @@
 //
 
 import Foundation
-struct ProfessionalType {
-    let type_id: Int?
+struct ProfessionalType: Codable {
+    let id: Int?
     let type: String?
+    
+    var coachType: CoachType? {
+        CoachType(rawValue: id ?? 0)
+    }
 
+}
+
+enum CoachType: Int {
+    case entrenador = 1
+    case nutricionista
+    case dietista
+    case fisioterapeuta
 }
