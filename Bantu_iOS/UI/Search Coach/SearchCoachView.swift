@@ -32,9 +32,9 @@ struct SearchCoachView: View {
                     ForEach(viewModel.professionals, id: \.id) { coach in
                         SearchCoachCell(nickName: coach.user?.name ?? "" ,
                                         coachDescription: coach.description ?? "",
-                                        photo: coach.user?.photo ?? "")
+                                        photo: coach.user?.photo?.securePath ?? "")
                     }
-                }
+                } .padding(12)
                 
             }
         }

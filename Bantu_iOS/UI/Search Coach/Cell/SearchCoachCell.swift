@@ -25,8 +25,9 @@ struct SearchCoachCell: View {
                         
                         VStack(alignment: .leading) {
                             Text(nickName)
-                                .font(.title2)
+                                .font(.title)
                                 .bold()
+                                .font(.system(size: 12))
                             Text(coachDescription)
                                 .font(.body)
                         }

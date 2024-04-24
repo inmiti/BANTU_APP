@@ -40,6 +40,7 @@
 		618F54462BC2FAE40088BD2C /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F54452BC2FAE40088BD2C /* Province.swift */; };
 		61A506AF2BD6F1B700BE68EC /* ButtonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A506AE2BD6F1B700BE68EC /* ButtonFilter.swift */; };
 		61AEE2CB2BD2CCFB009D7890 /* SearchCoachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEE2CA2BD2CCFB009D7890 /* SearchCoachCell.swift */; };
+		61B444142BD8DA2600C10B27 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B444132BD8DA2600C10B27 /* String+Extension.swift */; };
 		61C2EF832BCBD5EF00DB96F9 /* Professional_Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2EF822BCBD5EE00DB96F9 /* Professional_Type.swift */; };
 		61C2EF882BCBF03B00DB96F9 /* SearchCoachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2EF872BCBF03B00DB96F9 /* SearchCoachViewModel.swift */; };
 		61C458D82BB8394A00AE8CF3 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */; };
@@ -116,6 +117,7 @@
 		618F54452BC2FAE40088BD2C /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
 		61A506AE2BD6F1B700BE68EC /* ButtonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFilter.swift; sourceTree = "<group>"; };
 		61AEE2CA2BD2CCFB009D7890 /* SearchCoachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoachCell.swift; sourceTree = "<group>"; };
+		61B444132BD8DA2600C10B27 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		61C2EF822BCBD5EE00DB96F9 /* Professional_Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional_Type.swift; sourceTree = "<group>"; };
 		61C2EF872BCBF03B00DB96F9 /* SearchCoachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoachViewModel.swift; sourceTree = "<group>"; };
 		61C458D72BB8394A00AE8CF3 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 		618F543A2BC2F7CE0088BD2C /* Utils  */ = {
 			isa = PBXGroup;
 			children = (
+				61B444132BD8DA2600C10B27 /* String+Extension.swift */,
 			);
 			path = "Utils ";
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				612E33A92BD5895B00D2F2D3 /* DetailProfessionalView.swift in Sources */,
 				610989B82BC9905700A78684 /* CustomFieldView2.swift in Sources */,
 				6178BD092BC18EA900257502 /* HeaderView.swift in Sources */,
+				61B444142BD8DA2600C10B27 /* String+Extension.swift in Sources */,
 				61D5B73B2BD4EC2300D96D8C /* PickerRegisterView.swift in Sources */,
 				61CBB0AD2BCA5A8600138F67 /* NetworkErrors.swift in Sources */,
 				618F54272BC296AB0088BD2C /* SearchCoachView.swift in Sources */,

@@ -15,21 +15,21 @@ struct HomeClientView: View {
                 
                 VStack(spacing: 16) {
                 ImageHomeComponent(image: "misTablas_Home", 
-                                   text: "Tu texto aquí",
+                                   text: "Mis entrenamientos",
                                    height: 132)
                     HStack {
                         VStack(spacing: 20){
                             ImageHomeComponent(image: "Chats1",
-                                               text: "Tu texto aquí",
+                                               text: "Chats",
                                                height: 150)
                             ImageHomeComponent(image: "mis_compras",
-                                               text: "Tu texto aquí",
+                                               text: "Mis compras",
                                                height: 150)
                             
                         }
                         
                         ImageHomeComponent(image: "profesionales",
-                                           text: "Tu texto aquí",
+                                           text: "Mis profesionales",
                                            height: 350)
                     }
                 }

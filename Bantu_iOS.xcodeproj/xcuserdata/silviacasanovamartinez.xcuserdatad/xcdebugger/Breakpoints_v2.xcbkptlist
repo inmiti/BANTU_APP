@@ -18,36 +18,6 @@
             endingLineNumber = "24"
             landmarkName = "searchText"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "915A3A14-D892-4F17-90EA-AB2631AC63EF - e1e4aca000615851"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bantu_iOS.SearchCoachViewModel.searchText.didset : Swift.String"
-                  moduleName = "Bantu_iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silviacasanovamartinez/Desktop/Bantu_iOS/Bantu_iOS/UI/Search%20Coach/SearchCoachViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24">
-               </Location>
-               <Location
-                  uuid = "915A3A14-D892-4F17-90EA-AB2631AC63EF - c4c279a2b58197aa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Bantu_iOS.Professional) -&gt; Swift.Bool in Bantu_iOS.SearchCoachViewModel.searchText.didset : Swift.String"
-                  moduleName = "Bantu_iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silviacasanovamartinez/Desktop/Bantu_iOS/Bantu_iOS/UI/Search%20Coach/SearchCoachViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
