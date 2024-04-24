@@ -19,8 +19,12 @@ struct CheckBoxButton: View {
     }
 }
 
-#Preview {
-    CheckBoxButton(isSelected: .constant(false))
+//#Preview {
+//    CheckBoxButton(isSelected: .constant(false))
+//}
+
+struct CheckBoxButton_Previews: PreviewProvider {
+    static var previews: some View {
+        CheckBoxButton(isSelected: .constant(false))
+    }
 }
-
-

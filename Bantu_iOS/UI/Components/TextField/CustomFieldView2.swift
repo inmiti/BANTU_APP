@@ -79,13 +79,16 @@ struct CustomFieldView2: View {
     }
 }
 
+//#Preview {
+//    CustomFieldView2(
+//        type:.dropdown(options: ["Si", "No"]),
+//        text: .constant("¿Eres profesional? "))
+//    }
 
-#Preview {
-    CustomFieldView2(
-        type:.dropdown(options: ["Si", "No"]),
-        text: .constant("¿Eres profesional? "))
+struct CustomFieldView2_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomFieldView2(
+            type:.dropdown(options: ["Si", "No"]),
+            text: .constant("¿Eres profesional? "))
     }
-
-
-
-
+}

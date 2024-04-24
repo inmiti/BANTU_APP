@@ -41,6 +41,12 @@ struct ItemAgendaView: View {
         }
     }
 }
-#Preview {
-    AgendaView(numberOfItems: 5)
+//#Preview {
+//    AgendaView(numberOfItems: 5)
+//}
+
+struct AgendaView_Previews: PreviewProvider {
+    static var previews: some View {
+        AgendaView(numberOfItems: 5)
+    }
 }

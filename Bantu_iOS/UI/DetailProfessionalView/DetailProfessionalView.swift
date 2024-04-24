@@ -15,6 +15,12 @@ struct DetailProfessionalView: View {
     }
 }
 
-#Preview {
-    DetailProfessionalView()
+//#Preview {
+//    DetailProfessionalView()
+//}
+
+struct DetailProfessionalView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailProfessionalView()
+    }
 }

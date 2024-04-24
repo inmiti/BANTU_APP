@@ -30,8 +30,12 @@ struct AlertView: View {
     }
 }
 
+//#Preview {
+//    AlertView()
+//}
 
-
-#Preview {
-    AlertView()
+struct AlertView_Previews: PreviewProvider {
+    static var previews: some View {
+        AlertView()
+    }
 }

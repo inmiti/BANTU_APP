@@ -40,7 +40,12 @@ struct TabBarView: View {
     }
 }
 
+//#Preview {
+//    TabBarView()
+//}
 
-#Preview {
-    TabBarView()
+struct TabBarView_Previews: PreviewProvider {
+    static var previews: some View {
+        TabBarView()
+    }
 }

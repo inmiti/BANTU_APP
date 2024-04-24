@@ -40,6 +40,12 @@ struct HomeCoachView: View {
 }
 }
 
-#Preview {
-    HomeCoachView(dateSchedulle: 3)
+//#Preview {
+//    HomeCoachView(dateSchedulle: 3)
+//}
+
+struct HomeCoachView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeCoachView(dateSchedulle: 3)
+    }
 }

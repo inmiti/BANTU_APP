@@ -13,6 +13,12 @@ struct SocialView: View {
     }
 }
 
-#Preview {
-    SocialView()
+//#Preview {
+//    SocialView()
+//}
+
+struct SocialView_Previews: PreviewProvider {
+    static var previews: some View {
+        SocialView()
+    }
 }

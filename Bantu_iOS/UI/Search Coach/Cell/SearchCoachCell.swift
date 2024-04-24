@@ -38,7 +38,12 @@ struct SearchCoachCell: View {
                 .shadow(radius: 5)
         }}
 
-#Preview {
-    SearchCoachCell(nickName: "Silvia", coachDescription: "Esto es una breve descripción", photo: "hkdchsckjhcskj")
-}
+//#Preview {
+//    SearchCoachCell(nickName: "Silvia", coachDescription: "Esto es una breve descripción", photo: "hkdchsckjhcskj")
+//}
 
+struct SearchCoachCell_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchCoachCell(nickName: "Silvia", coachDescription: "Esto es una breve descripción", photo: "hkdchsckjhcskj")
+    }
+}

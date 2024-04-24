@@ -34,6 +34,12 @@ struct ImageHomeComponent: View {
     }
 }
 
-#Preview {
-    ImageHomeComponent(image: "profesionales", text: "Tu texto aquísadsdfsdfsdff", height: 350)
+//#Preview {
+//    ImageHomeComponent(image: "profesionales", text: "Tu texto aquísadsdfsdfsdff", height: 350)
+//}
+
+struct ImageHomeComponent_Previews: PreviewProvider {
+    static var previews: some View {
+        ImageHomeComponent(image: "profesionales", text: "Tu texto aquísadsdfsdfsdff", height: 350)
+    }
 }

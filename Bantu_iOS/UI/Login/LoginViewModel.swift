@@ -35,7 +35,7 @@ final class LoginViewModel: ObservableObject {
     func validateFields() -> Bool {
         validateEmail() && !invalidatePassword()
     }
-   func validateEmail() -> Bool {
+    func validateEmail() -> Bool {
        email.contains("@") && email.contains(".")
     }
     
@@ -44,7 +44,7 @@ final class LoginViewModel: ObservableObject {
     }
     
    func login(completion: () -> ()) async {
-         showErrorLogin = false
+        showErrorLogin = false
         loading = true
         let task = Task(priority: .utility) {
             return try await networkResponse.login(email: email, password: password)

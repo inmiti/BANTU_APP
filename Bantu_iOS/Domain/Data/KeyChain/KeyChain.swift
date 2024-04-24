@@ -11,7 +11,7 @@ import KeychainSwift
 protocol KeyChainProtocol {
     func save(token: String)
     func getToken() -> String?
-    
+    func deleteToken(token: String)
 }
 
 final class KeyChain: KeyChainProtocol {

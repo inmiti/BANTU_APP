@@ -37,7 +37,7 @@ struct SplashView: View {
     
     private var splashSection: some View {
         Group {
-            Image(.icon38)
+            Image(String("Icon2"))
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {
@@ -50,9 +50,16 @@ struct SplashView: View {
 }
 
 
-#Preview {
-    SplashView()
-        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//#Preview {
+//    SplashView()
+//        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//}
+
+struct SplashView_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
 }
 
 

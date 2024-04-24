@@ -40,6 +40,12 @@ struct HomeClientView: View {
     }
 }
 
-#Preview {
-    HomeClientView()
+//#Preview {
+//    HomeClientView()
+//}
+
+struct HomeClientView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeClientView()
+    }
 }

@@ -40,6 +40,12 @@ struct SearchCoachView: View {
         }
     }
 }
-#Preview {
-    SearchCoachView()
+//#Preview {
+//    SearchCoachView()
+//}
+
+struct SearchCoachView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchCoachView()
+    }
 }

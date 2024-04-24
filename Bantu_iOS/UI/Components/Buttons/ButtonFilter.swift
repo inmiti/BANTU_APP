@@ -13,11 +13,17 @@ struct ButtonFilter: View {
         Button {
             
         } label: {
-            Image(.iconDietista)
+//            Image(.iconDietista)
         }
     }
 }
 
-#Preview {
-    ButtonFilter()
+//#Preview {
+//    ButtonFilter()
+//}
+
+struct ButtonFilter_Previews: PreviewProvider {
+    static var previews: some View {
+        ButtonFilter()
+    }
 }
