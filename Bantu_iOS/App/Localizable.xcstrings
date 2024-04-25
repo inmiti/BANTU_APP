@@ -1,0 +1,146 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    " Ha ocurrido un error " : {
+
+    },
+    "¡¡ Correo incorrecto !!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡¡ Correo incorrecto!!"
+          }
+        }
+      }
+    },
+    "Buscar" : {
+
+    },
+    "Create an account" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear una cuenta "
+          }
+        }
+      }
+    },
+    "Create your account" : {
+
+    },
+    "Forgot Password?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿ Has olvidado tu contraseña?"
+          }
+        }
+      }
+    },
+    "Hola2 alguien" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hola alguien"
+          }
+        }
+      }
+    },
+    "Home" : {
+
+    },
+    "Key" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Key"
+          }
+        }
+      }
+    },
+    "LOADING" : {
+
+    },
+    "Login to your Account" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingresar"
+          }
+        }
+      }
+    },
+    "Parece que algo salió mal" : {
+
+    },
+    "Register" : {
+
+    },
+    "Remember me" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recuérdame "
+          }
+        }
+      }
+    },
+    "search" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Social" : {
+
+    },
+    "Social " : {
+
+    },
+    "Wellcome Back" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido"
+          }
+        }
+      }
+    },
+    "Your email" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu email"
+          }
+        }
+      }
+    },
+    "Your password" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu Password"
+          }
+        }
+      }
+    },
+    "Your Password" : {
+
+    }
+  },
+  "version" : "1.0"
+}
