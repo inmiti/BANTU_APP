@@ -19,8 +19,3 @@ struct User: Codable {
     var active: Bool?
 
 }
-
-struct AuthResponse: Codable {
-    let accesToken: String?
-    let refreshToken: String?
-}

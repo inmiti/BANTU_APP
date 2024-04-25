@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F169DA22BDA39E30096AB08 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F169DA12BDA39E30096AB08 /* LoginTests.swift */; };
+		1F169DA42BDA3A410096AB08 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F169DA32BDA3A410096AB08 /* AuthResponse.swift */; };
 		1F3E6EC52BD91FCC003EC154 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1F3E6EC42BD91FCC003EC154 /* KeychainSwift */; };
 		1FA56BDC2BD960CF003E3628 /* KeychainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA56BDB2BD960CF003E3628 /* KeychainTest.swift */; };
 		1FA56BE02BD96FE2003E3628 /* ProfessionalFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA56BDF2BD96FE2003E3628 /* ProfessionalFake.swift */; };
@@ -85,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F169DA12BDA39E30096AB08 /* LoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		1F169DA32BDA3A410096AB08 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		1FA56BDB2BD960CF003E3628 /* KeychainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTest.swift; sourceTree = "<group>"; };
 		1FA56BDF2BD96FE2003E3628 /* ProfessionalFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalFake.swift; sourceTree = "<group>"; };
 		1FA56BE12BD97546003E3628 /* ModelsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTest.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 				1FA56BDB2BD960CF003E3628 /* KeychainTest.swift */,
 				1FA56BE12BD97546003E3628 /* ModelsTest.swift */,
 				1FA56BE52BD9791C003E3628 /* LoginViewModelTest.swift */,
+				1F169DA12BDA39E30096AB08 /* LoginTests.swift */,
 			);
 			path = Bantu_iOSTests;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				61C2EF822BCBD5EE00DB96F9 /* Professional_Type.swift */,
 				61D5B73E2BD4F93300D96D8C /* Professional_Mock.swift */,
 				61D5B7482BD4FEF800D96D8C /* UserMock.swift */,
+				1F169DA32BDA3A410096AB08 /* AuthResponse.swift */,
 				1FA56BDF2BD96FE2003E3628 /* ProfessionalFake.swift */,
 				1FA56BE32BD976DF003E3628 /* UserFake.swift */,
 			);
@@ -689,6 +695,7 @@
 				618F54402BC2FAC10088BD2C /* User.swift in Sources */,
 				1FA56BE42BD976DF003E3628 /* UserFake.swift in Sources */,
 				61CBB0BA2BCA667800138F67 /* AlertView.swift in Sources */,
+				1F169DA42BDA3A410096AB08 /* AuthResponse.swift in Sources */,
 				61C2EF832BCBD5EF00DB96F9 /* Professional_Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +707,7 @@
 				1FA56BE62BD9791C003E3628 /* LoginViewModelTest.swift in Sources */,
 				613656AB2BB3361500DA8A71 /* Bantu_iOSTests.swift in Sources */,
 				1FA56BDC2BD960CF003E3628 /* KeychainTest.swift in Sources */,
+				1F169DA22BDA39E30096AB08 /* LoginTests.swift in Sources */,
 				1FA56BE22BD97546003E3628 /* ModelsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

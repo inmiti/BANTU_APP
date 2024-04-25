@@ -98,10 +98,10 @@ struct LoginView: View {
 //    LoginView(state: .constant(.login))
 //}
 
-//struct LoginView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoginView(state: .constant(.login)) PersistenceController.preview.container.viewContext)
-//    }
-//}
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView(state: .constant(.login))
+    }
+}
 
 

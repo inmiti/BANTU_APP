@@ -13,10 +13,6 @@ struct Professional: Codable {
     var id: Int?
     let type: ProfessionalType?
     let user: User?
-    
-
-   
-   
 }
 
 //extension Professional {

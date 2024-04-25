@@ -42,13 +42,12 @@ struct SplashView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {
                             viewState = .login
-                        }
                     }
                 }
+            }
         }
     }
 }
-
 
 //#Preview {
 //    SplashView()
