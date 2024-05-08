@@ -36,17 +36,24 @@ struct SplashView: View {
     }
     
     private var splashSection: some View {
-        Group {
-            Image(String("Icon2"))
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        withAnimation {
-                            viewState = .login
+//        Group {
+            ZStack {
+                //Background
+                Image(decorative:"")
+                    .resizable()
+                    .background(Color("backgroundBantu"))
+                    .edgesIgnoringSafeArea(.all)
+                
+                Image(String("Icon2"))
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            withAnimation {
+                                viewState = .login
+                            }
+                        }
                     }
-                }
             }
         }
-    }
 }
 
 //#Preview {

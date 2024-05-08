@@ -42,6 +42,9 @@ struct PickerRegisterView: View {
 
 struct PickerRegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        PickerRegisterView(textComponent: .constant("¿Eres profesional"), isError: .constant(true), fieldType: .dropdown(options: ["Si", "No"]))
+        PickerRegisterView(
+            textComponent: .constant("¿Eres profesional"),
+            isError: .constant(true),
+            fieldType: .dropdown(options: ["Si", "No"]))
     }
 }
