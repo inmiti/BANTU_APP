@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     @StateObject var loginViewModel = LoginViewModel()
-    @Environment(\.colorScheme) var colorScheme
+//    @Environment(\.colorScheme) var colorScheme
     @Binding var state: ViewState
     
     

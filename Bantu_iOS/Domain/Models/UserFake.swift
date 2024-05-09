@@ -9,7 +9,19 @@ import Foundation
 
 struct UserFake {
     let responseUser: [User] = [
+        User(id: 1,
+             name: "TestUsuario",
+             lastName1: "Testapellido",
+             lastName2: "TestApellido",
+             postalCode: "00000",
+             email: "test@email.es",
+             city: "TEST",
+             photo: "http://90.163.132.130:8090/bantu/user00.png",
+             password: "password",
+             active: true
+            ),
         User(
+            id:2,
             name: "JOSEP",
             lastName1:"GUARDIOLA",
             lastName2:"I SALA",
@@ -17,10 +29,11 @@ struct UserFake {
             email:"pep.guardiola@manchester.uk",
             city:"Santpedor",
             photo:"http://90.163.132.130:8090/bantu/user02.png",
-            password:"$2b$12$xFyrpIOgKuu1awuFNPNn8OQRkKXS9uh7au0A.3S/BUz3SwURnjR3y",
+            password:"123456",
             active:true
         ),
         User(
+            id: 3,
             name: "JOAN",
             lastName1:"PRADELLS",
             lastName2:"MARTINEZ",
@@ -28,7 +41,7 @@ struct UserFake {
             email:"jpadrells@bantu.com",
             city:"Valencia",
             photo:"http://90.163.132.130:8090/bantu/user03.png",
-            password:"$2b$12$xFyrpIOgKuu1awuFNPNn8OQRkKXS9uh7au0A.3S/BUz3SwURnjR3y",
+            password:"123456",
             active:true
         )
     ]    

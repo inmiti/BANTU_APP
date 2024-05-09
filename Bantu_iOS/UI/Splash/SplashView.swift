@@ -36,8 +36,13 @@ struct SplashView: View {
     }
     
     private var splashSection: some View {
-        Group {
+        ZStack {
+            Image(decorative:"")
+                .resizable()
+                .background(Color("backgroundBantu"))
+                .edgesIgnoringSafeArea(.all)
             Image(String("Icon2"))
+            //TODO animación con icono
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {

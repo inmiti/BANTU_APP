@@ -8,20 +8,25 @@
 import Foundation
 struct VoidResponse: Codable {}
 
-final class NetworkResponse {
+protocol NetworkResponseProtocol {
+    func login(email: String, password: String) async throws -> AuthResponse
+    func getProfessionals(token: String) async throws -> [Professional]
+}
+
+final class NetworkResponse: NetworkResponseProtocol {
     static let shared = NetworkResponse()
+    
     func login(email: String, password: String) async throws -> AuthResponse {
         try await checkResponse(request: .request(networkRequest: .login(email: email, password: password)), type: AuthResponse.self)
     }
     
-    // Para test
-    func mockedLogin(email: String, password: String) throws -> AuthResponse {
-           if(email == "mocked" && password == "mocked"){
-               return AuthResponse(accesToken: "asdasdasd", refreshToken: "dasdasd")
-           }else{
-               throw NetworkErrors.general
-           }
-       }
+//    func mockedLogin(email: String, password: String) throws -> AuthResponse {
+//           if(email == "mocked" && password == "mocked"){
+//               return AuthResponse(accesToken: "asdasdasd", refreshToken: "dasdasd")
+//           }else{
+//               throw NetworkErrors.general
+//           }
+//       }
     
     func registerUser(user: User) async throws -> VoidResponse{
         try await checkResponse(request: .request(networkRequest: .registerUser(user: user)), type: VoidResponse.self)
@@ -30,6 +35,7 @@ final class NetworkResponse {
     func getProfessionals(token: String) async throws -> [Professional] {
         try await checkResponse(request: .request(networkRequest: .getProfessionals(token: token)), type: [Professional].self)
     }
+    
     // Método para obtener un JSON lanzando una petición asíncrona y controlando los errores
     func checkResponse<T: Codable>(request: URLRequest,
                                    type: T.Type,
@@ -74,4 +80,22 @@ final class NetworkResponse {
     }
 }
 
-
+// Clase para mockear y tests.
+final class NetworkResponseFake: NetworkResponseProtocol{
+    
+    func login(email: String, password: String) async throws -> AuthResponse {
+        if(email == "test@email.es" && password == "password"){
+            return AuthResponse(accesToken: "asdasdasd", refreshToken: "dasdasd")
+        }else{
+            throw NetworkErrors.general
+        }
+    }
+    
+    func getProfessionals(token: String) async throws -> [Professional] {
+        if token == "asdasdasd" {
+            return ProfessionalFake().responseProfessional
+        } else{
+            throw NetworkErrors.general
+        }
+    }
+}

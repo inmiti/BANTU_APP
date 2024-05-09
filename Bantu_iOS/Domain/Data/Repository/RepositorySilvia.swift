@@ -6,8 +6,8 @@
 //
 
 import Foundation
-class Repository {
-    static let shared = Repository()
+class RepositorySilvia {
+    //static let shared = Repository()
     
     func loadJSONData(from filename: String) -> Data? {
         if let url = Bundle.main.url(forResource: filename, withExtension: "json"),
