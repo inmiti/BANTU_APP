@@ -13,12 +13,12 @@ final class LoginViewModel: ObservableObject {
     //let networkResponse = NetworkResponse.shared
     
     // MARK: - Properties -
-    @Published var email = "" {
+    @Published var email = "test@email.es" {
         didSet {
             showErrorEmail = !validateEmail()
         }
     }
-    @Published var password = "" {
+    @Published var password = "password" {
         didSet {
             showErrorPassword = invalidatePassword()
         }
@@ -29,6 +29,7 @@ final class LoginViewModel: ObservableObject {
     @Published var showErrorEmail = false
     @Published var showErrorPassword = false
     @Published var showErrorLogin = false
+    
     var token: String = ""
     
     private var useCase: UseCaseProtocol

@@ -9,7 +9,7 @@ import Foundation
 
 
 enum NetworkErrors: Error {
-    case general(String)
+    case general //(String)
     case json
     case nonHTTP
     case status(Int)

@@ -16,6 +16,7 @@ struct MainButton: View {
         }
                , label: {
             Text(textButton)
+                .foregroundColor(.white)
         })
         .buttonStyle(.plain)
         .frame(height: 60)

@@ -8,35 +8,33 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @State var stateView: StatusModels = .home
+    
     var body: some View {
-        ZStack {
-            Color.bantu_orange
-                .ignoresSafeArea()
+
             TabView {
-                HomeClientView()
+                SearchCoachView()
                     .tabItem {
                         Image(systemName: "house")
                         Text("Home")
                     }
-                SearchCoachView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("search")
-                    }
                 SocialView()
                     .tabItem {
-                        Image(systemName: "person.line.dotted.person")
+                        Image(systemName: "person.2")
                         Text("Social")
+                    }
+                ChatsView()
+                    .tabItem {
+                        Image(systemName: "ellipsis.message")
+                        Text("Chats")
                     }
                 SettingsView()
                     .tabItem {
-                        Image(systemName: "gear")
+                        Image(systemName: "gearshape")
                         Text("Settings")
                     }
             }
             .accentColor(.bantu_orange)
-            .padding(.top)
-        }
     }
 }
 

@@ -42,6 +42,9 @@ struct SplashView: View {
                 .background(Color("backgroundBantu"))
                 .edgesIgnoringSafeArea(.all)
             Image(String("Icon2"))
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
             //TODO animación con icono
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {

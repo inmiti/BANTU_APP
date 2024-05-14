@@ -11,7 +11,8 @@ struct HomeClientView: View {
     var body: some View {
         ScrollView {
             VStack {
-                HeaderView()
+                HeaderView(headerText: "Profesionales", nameButtonHeader: "Date de alta")
+        
                 
                 VStack(spacing: 16) {
                 ImageHomeComponent(image: "misTablas_Home", 

@@ -57,11 +57,11 @@ final class UseCaseFakeFailure: UseCaseProtocol {
     
     func login(email: String, password: String) async throws -> AuthResponse {
         // Simular un fallo al iniciar sesión
-        throw NetworkErrors.general("Credenciales inválidas")
+        throw NetworkErrors.general
     }
     
     func getProfessionals(token: String) async throws -> [Professional] {
         // Simular un fallo al obtener profesionales
-        throw NetworkErrors.general("Error al obtener datos del servidor")
+        throw NetworkErrors.general
     }
 }

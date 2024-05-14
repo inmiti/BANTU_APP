@@ -13,7 +13,8 @@ struct SearchCoachView: View {
     
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(headerText: "Profesionales", nameButtonHeader: "Date de alta")
+                .ignoresSafeArea()
             VStack {
                 TextField("Buscar", text: $viewModel.searchText)
                     .padding()
