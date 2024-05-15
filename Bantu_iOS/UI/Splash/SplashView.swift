@@ -45,7 +45,7 @@ struct SplashView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50, height: 50)
-            //TODO animación con icono
+            //TODO: animación con icono
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {

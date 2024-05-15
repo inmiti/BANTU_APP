@@ -14,11 +14,13 @@ enum TypeProfessional: String, CaseIterable {
 }
 
 struct RegistrationView: View {
+    @Binding var state: ViewState
+    
     @State private var selectedType: TypeProfessional = .professional
     @State private var isPickerVisible = false
     @StateObject var viewModel = RegistrationViewModel()
-    @Binding var state: ViewState
-    let options = ["Si", "No"]
+    
+    let options = ["Profesional", "Usuario"]
     var body: some View {
         ZStack{
             Image(decorative:"")
@@ -29,7 +31,7 @@ struct RegistrationView: View {
             VStack (spacing:11){
                 Image(decorative: "Icon2")
                     .resizable()
-                    .frame(width:80, height: 80)
+                    .frame(width:60, height: 60)
                 Text("Register")
                     .font(.system(size: 28))
                     .bold()
@@ -71,11 +73,22 @@ struct RegistrationView: View {
                         //                            }
                         //                        }
                     }
-                    .padding([.leading, .trailing], 35)
+                    .padding([.leading, .trailing], 32)
+                    .padding()
                 }
             }
-            .padding(.horizontal, 35)
+            .padding(.horizontal, 32)
         }
+        .navigationBarItems(leading: Button(
+            action: {
+                state = .login
+            }, label: {
+                HStack{
+                    Image(systemName: "chevron.left")
+                    Text("Volver")
+                }
+                .foregroundColor(.blue)
+        }))
     }
 }
 
