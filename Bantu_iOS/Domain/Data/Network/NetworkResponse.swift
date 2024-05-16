@@ -11,6 +11,7 @@ struct VoidResponse: Codable {}
 protocol NetworkResponseProtocol {
     func login(email: String, password: String) async throws -> AuthResponse
     func getProfessionals(token: String) async throws -> [Professional]
+    func registerUser(user: User) async throws -> User
 }
 
 final class NetworkResponse: NetworkResponseProtocol {
@@ -28,8 +29,8 @@ final class NetworkResponse: NetworkResponseProtocol {
 //           }
 //       }
     
-    func registerUser(user: User) async throws -> VoidResponse{
-        try await checkResponse(request: .request(networkRequest: .registerUser(user: user)), type: VoidResponse.self)
+    func registerUser(user: User) async throws -> User {
+        try await checkResponse(request: .request(networkRequest: .registerUser(user: user)), type: User.self)
     }
     
     func getProfessionals(token: String) async throws -> [Professional] {
@@ -81,12 +82,20 @@ final class NetworkResponse: NetworkResponseProtocol {
 }
 
 // Clase para mockear y tests.
-final class NetworkResponseFake: NetworkResponseProtocol{
+final class NetworkResponseFake: NetworkResponseProtocol {
     
     func login(email: String, password: String) async throws -> AuthResponse {
         if(email == "test@email.es" && password == "password"){
             return AuthResponse(accesToken: "asdasdasd", refreshToken: "dasdasd")
         }else{
+            throw NetworkErrors.general
+        }
+    }
+    
+    func registerUser(user: User) async throws -> User {
+        if(user.name == "userTest" && user.email == "test@email.es" && user.password == "password") {
+            return user
+        } else {
             throw NetworkErrors.general
         }
     }

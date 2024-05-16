@@ -56,7 +56,7 @@ struct CustomFieldView2: View {
                                     .foregroundColor(.gray.opacity(0.4))
                                 Text(selectedOption)
                                     .padding(.leading, 8)
-                                    .foregroundColor(selectedOption == "¿Eres profesional del bienestar?" ? .gray.opacity(0.4) : .black)
+                                    .foregroundColor(selectedOption == "¿Eres profesional del bienestar?" ? .gray.opacity(0.5) : .black)
                                 Spacer()
                                 Image(systemName: "chevron.down")
                                     .foregroundColor(.gray.opacity(0.4))
@@ -97,7 +97,6 @@ struct CustomFieldView2: View {
             .cornerRadius(30)
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
-            .opacity(0.8)
     }
     
     func commonImageOverlay(_ imageName: String) -> some View {

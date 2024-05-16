@@ -12,7 +12,7 @@ struct Professional: Codable {
     let description: String?
     var id: Int?
     let type: ProfessionalType?
-    let user: User?
+//    let user: User?
 }
 
 //extension Professional {

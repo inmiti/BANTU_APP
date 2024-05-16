@@ -290,6 +290,7 @@
 		613656D82BB33C2100DA8A71 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				61B444132BD8DA2600C10B27 /* String+Extension.swift */,
 				613656D92BB33C3700DA8A71 /* Color+Extension.swift */,
 			);
 			path = Extensions;
@@ -389,7 +390,6 @@
 		618F543A2BC2F7CE0088BD2C /* Utils  */ = {
 			isa = PBXGroup;
 			children = (
-				61B444132BD8DA2600C10B27 /* String+Extension.swift */,
 			);
 			path = "Utils ";
 			sourceTree = "<group>";

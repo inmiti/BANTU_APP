@@ -18,5 +18,5 @@ struct User: Codable {
     var photo: String?
     var password: String?
     var active: Bool?
-
+    var professional: Professional?
 }

@@ -15,13 +15,13 @@ enum NameProfessional: String {
 
 @MainActor
 final class SearchCoachViewModel: ObservableObject {
-    let networkResponse = NetworkResponse.shared
+//    let networkResponse = NetworkResponse.shared
    
     @Published var isLoading = false
     @Published var users: [UserMock] = []
     @Published var searchText = "" {
         didSet {
-            filteredCoachers = professionals.filter {($0.user?.name ?? "").lowercased().hasPrefix(searchText.lowercased())}
+//            filteredCoachers = professionals.filter {($0.user?.name ?? "").lowercased().hasPrefix(searchText.lowercased())}
         }
     }
     @Published var professionals = [Professional]()
@@ -31,18 +31,23 @@ final class SearchCoachViewModel: ObservableObject {
             filteredCoachers = filterCoachBy()
         }
     }
-    init() {
+    
+    private var useCase: UseCaseProtocol
+    
+    
+    init(useCase: UseCaseProtocol = UseCaseFake()) {
+        self.useCase = useCase
         Task {
            await getProfessionals()
-            print(professionals)
+//            print(professionals)
         }
     }
     
     func getProfessionals() async  {
         guard let token = KeyChain.shared.getToken() else { return }
-        print(token)
+//        print(token)
         let task = Task(priority: .background) {
-                return try await networkResponse.getProfessionals(token: token)
+                return try await useCase.getProfessionals(token: token)
             }
         switch await task.result {
             case .success(let response):
@@ -73,14 +78,15 @@ final class SearchCoachViewModel: ObservableObject {
     
     
     func filteredItems(_ searchText: String) -> [String] {
-            let items = professionals.compactMap { professional in
-                professional.user?.name
-            }
-            if searchText.isEmpty {
-                return items
-            } else {
-                return items.filter { $0.localizedCaseInsensitiveContains(searchText) }
-            }
+        return ["TODO: pendiente de arreglar modelos"]
+//            let items = professionals.compactMap { professional in
+////                professional.user?.name
+//            }
+//            if searchText.isEmpty {
+//                return items
+//            } else {
+//                return items.filter { $0.localizedCaseInsensitiveContains(searchText) }
+//            }
     }
 }
 

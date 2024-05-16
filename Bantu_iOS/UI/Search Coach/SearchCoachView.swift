@@ -16,7 +16,7 @@ struct SearchCoachView: View {
             HeaderView(headerText: "Profesionales", nameButtonHeader: "Date de alta")
                 .ignoresSafeArea()
             VStack {
-                TextField("Buscar", text: $viewModel.searchText)
+                TextField("Encuentra tu profesional", text: $viewModel.searchText)
                     .padding()
                     .background(Color(.systemGray5))
                     .cornerRadius(8)
@@ -30,12 +30,13 @@ struct SearchCoachView: View {
                 //                    .listStyle(PlainListStyle())
                 //                }
                 List {
-                    ForEach(viewModel.professionals, id: \.id) { coach in
-                        SearchCoachCell(nickName: coach.user?.name ?? "" ,
-                                        coachDescription: coach.description ?? "",
-                                        photo: coach.user?.photo?.securePath ?? "")
-                    }
-                } .padding(12)
+//                    ForEach(viewModel.professionals, id: \.id) { coach in
+//                        SearchCoachCell(name: coach.user?.name ?? "" ,
+//                                        firstName: coach.user?.lastName1 ?? "",
+//                                        coachDescription: coach.description ?? "",
+//                                        photo: coach.user?.photo?.securePath ?? "")
+//                    }
+                }
                 
             }
         }

@@ -30,7 +30,8 @@ struct UserFake {
             city:"Santpedor",
             photo:"http://90.163.132.130:8090/bantu/user02.png",
             password:"123456",
-            active:true
+            active:true,
+            professional: ProfessionalFake().responseProfessional.first
         ),
         User(
             id: 3,

@@ -17,10 +17,10 @@ struct RegistrationView: View {
     @Binding var state: ViewState
     
     @State private var selectedType: TypeProfessional = .professional
-    @State private var isPickerVisible = false
+//    @State private var isPickerVisible = false
     @StateObject var viewModel = RegistrationViewModel()
+    private let options = ["Profesional", "Usuario"]
     
-    let options = ["Profesional", "Usuario"]
     var body: some View {
         ZStack{
             Image(decorative:"")
@@ -43,7 +43,7 @@ struct RegistrationView: View {
                 
                 VStack(alignment: .leading, spacing: 20){
                     CustomTextFieldView2(
-                        textComponent: $viewModel.nickName,
+                        textComponent: $viewModel.userName,
                         isError: .constant(false),
                         fieldType: .username
                     )
@@ -61,17 +61,19 @@ struct RegistrationView: View {
                     )
                     
                     CustomTextFieldView2(
-                        textComponent: $viewModel.password,
+                        textComponent: $viewModel.professional,
                         isError: .constant(false),
                         fieldType: .dropdown(options: options)
                     )
                     
-                    MainButton(textButton: "Sign in") {
-                        //                        Task {
-                        //                            await viewModel.registerUser {
-                        //                                state = .login
-                        //                            }
-                        //                        }
+                    MainButton(textButton: "Register") {
+                        Task {
+                            await viewModel.registerUser {
+                                //TODO: hay que obtener el token y guardarlo
+                                state = .login 
+                            }
+                        }
+                         
                     }
                     .padding([.leading, .trailing], 32)
                     .padding()
