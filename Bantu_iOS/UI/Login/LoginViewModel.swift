@@ -34,8 +34,18 @@ final class LoginViewModel: ObservableObject {
     
     private var useCase: UseCaseProtocol
     
-    init(useCase: UseCaseProtocol = UseCaseFake()) {
+    @Published var user: User?
+    
+    init(useCase: UseCaseProtocol = UseCaseFake(),
+         user: User? = nil) {
         self.useCase = useCase
+        self.user = user
+        
+        if let user = user {
+            self.email = user.email ?? ""
+            self.password = user.password ?? ""
+            
+        }
     }
     
     

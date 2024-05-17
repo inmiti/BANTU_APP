@@ -70,7 +70,7 @@ struct RegistrationView: View {
                         Task {
                             await viewModel.registerUser {
                                 //TODO: hay que obtener el token y guardarlo
-                                state = .login 
+                                state = .login(loginVieModel: LoginViewModel(user: viewModel.user))
                             }
                         }
                          
@@ -83,7 +83,7 @@ struct RegistrationView: View {
         }
         .navigationBarItems(leading: Button(
             action: {
-                state = .login
+                state = .login(loginVieModel: LoginViewModel(user: nil))
             }, label: {
                 HStack{
                     Image(systemName: "chevron.left")

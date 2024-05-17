@@ -10,7 +10,7 @@ import CoreData
 
 enum ViewState {
     case splash
-    case login
+    case login(loginVieModel: LoginViewModel)
     case home
     case register
 }
@@ -25,8 +25,8 @@ struct SplashView: View {
             switch viewState {
             case .splash:
                 splashSection
-            case .login:
-                LoginView(state: $viewState)
+            case .login(let loginViewModel):
+                LoginView(loginViewModel: loginViewModel, state: $viewState)
             case .home:
                TabBarView()
             case .register:
@@ -49,7 +49,7 @@ struct SplashView: View {
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {
-                            viewState = .login
+                            viewState = .login(loginVieModel: LoginViewModel(user: nil))
                     }
                 }
             }

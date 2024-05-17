@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @StateObject var loginViewModel = LoginViewModel()
+    @StateObject var loginViewModel: LoginViewModel
 //    @Environment(\.colorScheme) var colorScheme
     @Binding var state: ViewState
     
@@ -104,7 +104,8 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(state: .constant(.login))
+        LoginView(loginViewModel: LoginViewModel(user: nil),
+                  state: .constant(.login(loginVieModel: LoginViewModel(user: nil))))
     }
 }
 
