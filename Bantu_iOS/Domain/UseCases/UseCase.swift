@@ -10,7 +10,7 @@ import Foundation
 protocol UseCaseProtocol {
     func login(email: String, password: String) async throws -> AuthResponse
     func registerUser(user: User) async throws -> User
-    func getProfessionals(token: String) async throws -> [Professional]
+    func getProfessionals(token: String) async throws -> [User]
 }
 
 //Real
@@ -29,7 +29,7 @@ final class UseCaseReal: UseCaseProtocol {
         return try await network.registerUser(user: user)
     }
     
-    func getProfessionals(token: String) async throws -> [Professional] {
+    func getProfessionals(token: String) async throws -> [User] {
         return try await network.getProfessionals(token: token)
     }
 }
@@ -50,7 +50,7 @@ final class UseCaseFake: UseCaseProtocol {
         return try await networkFake.registerUser(user: user)
     }
     
-    func getProfessionals(token: String) async throws -> [Professional] {
+    func getProfessionals(token: String) async throws -> [User] {
         return try await networkFake.getProfessionals(token: token)
     }
 }
@@ -72,7 +72,7 @@ final class UseCaseFakeFailure: UseCaseProtocol {
         throw NetworkErrors.general
     }
     
-    func getProfessionals(token: String) async throws -> [Professional] {
+    func getProfessionals(token: String) async throws -> [User] {
         // Simular un fallo al obtener profesionales
         throw NetworkErrors.general
     }

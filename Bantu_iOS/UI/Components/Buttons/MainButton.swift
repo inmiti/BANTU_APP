@@ -21,7 +21,6 @@ struct MainButton: View {
         .buttonStyle(.plain)
         .frame(height: 60)
         .frame(maxWidth: .infinity)
-        .foregroundColor(.black)
         .background(Color.bantu_orange)
         .cornerRadius(30)
       

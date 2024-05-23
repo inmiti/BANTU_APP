@@ -43,6 +43,7 @@ extension NetworkModel {
         case .getProvinces:
             return "/api/provinces/all"
         case .getProfessionals:
+            //TODO: Cambiar dirección por la de getUsers
             return "/api/professionals/all"
         }
     }

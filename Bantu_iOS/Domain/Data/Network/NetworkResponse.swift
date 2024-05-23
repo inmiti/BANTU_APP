@@ -10,7 +10,7 @@ struct VoidResponse: Codable {}
 
 protocol NetworkResponseProtocol {
     func login(email: String, password: String) async throws -> AuthResponse
-    func getProfessionals(token: String) async throws -> [Professional]
+    func getProfessionals(token: String) async throws -> [User]
     func registerUser(user: User) async throws -> User
 }
 
@@ -33,8 +33,9 @@ final class NetworkResponse: NetworkResponseProtocol {
         try await checkResponse(request: .request(networkRequest: .registerUser(user: user)), type: User.self)
     }
     
-    func getProfessionals(token: String) async throws -> [Professional] {
-        try await checkResponse(request: .request(networkRequest: .getProfessionals(token: token)), type: [Professional].self)
+    func getProfessionals(token: String) async throws -> [User] {
+        //TODO: Revisar que está bien puesto la url de la api, que me devuelve usuarios, no profesionales. 
+        try await checkResponse(request: .request(networkRequest: .getProfessionals(token: token)), type: [User].self)
     }
     
     // Método para obtener un JSON lanzando una petición asíncrona y controlando los errores
@@ -100,9 +101,9 @@ final class NetworkResponseFake: NetworkResponseProtocol {
         }
     }
     
-    func getProfessionals(token: String) async throws -> [Professional] {
+    func getProfessionals(token: String) async throws -> [User] {
         if token == "asdasdasd" {
-            return ProfessionalFake().responseProfessional
+            return UserFake().responseUser
         } else{
             throw NetworkErrors.general
         }

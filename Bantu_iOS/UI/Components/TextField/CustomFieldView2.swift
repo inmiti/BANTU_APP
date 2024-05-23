@@ -25,6 +25,7 @@ struct CustomFieldView2: View {
             return AnyView(
                 SecureField("Your password", text: $text)
                     .padding(.leading, 54)
+                    .background(Color.bantu_textFields)
                     .overlay(
                         commonImageOverlay("lock.rectangle")
                     )
@@ -62,27 +63,12 @@ struct CustomFieldView2: View {
                                     .foregroundColor(.gray.opacity(0.4))
                             }
                             .padding()
-                            .background(Color.white)
+                            .background(Color.bantu_textFields)
                             .cornerRadius(30)
                 })
             )
         }
     }
-                
-//                VStack {
-//
-//                    Picker(selection: $selection, label: Text("¿Eres profesional?")) {
-//                        ForEach(options, id: \.self) { option in
-//                            Text(option).tag(option)
-//                                .foregroundColor(.gray)
-//                        }
-//                    }
-//                    .pickerStyle(MenuPickerStyle())
-//                .padding(.leading, 40)
-//                }
-//            )
-//        }
-//    }
     
     func commonTextField(_ placeholder: String, imageName: String) -> some View {
         TextField(placeholder, text: $text)
@@ -90,10 +76,9 @@ struct CustomFieldView2: View {
             .overlay(
                 commonImageOverlay(imageName)
             )
-            .background(Color.white)
+            .background(Color.bantu_textFields)
             .frame(height: 62)
             .keyboardType(.emailAddress)
-            .background(Color.white)
             .cornerRadius(30)
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()

@@ -16,7 +16,7 @@ struct CustomTextFieldView2: View {
       
         VStack(alignment: .leading){
             RoundedRectangle(cornerRadius: 30)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.bantu_textFields)
                 .frame(height: 62)
                 .shadow(color: Color.gray, radius: 1.0, x:4, y:4)
                 .overlay {

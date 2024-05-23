@@ -34,6 +34,7 @@ struct TabBarView: View {
                         Text("Settings")
                     }
             }
+            .background(Color.bantu_background)
             .accentColor(.bantu_orange)
     }
 }

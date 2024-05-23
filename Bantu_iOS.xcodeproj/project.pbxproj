@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1059DF2BFF99DB00A7BA96 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1059DE2BFF99DB00A7BA96 /* SearchTextField.swift */; };
 		1F169DA22BDA39E30096AB08 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F169DA12BDA39E30096AB08 /* LoginTests.swift */; };
 		1F169DA42BDA3A410096AB08 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F169DA32BDA3A410096AB08 /* AuthResponse.swift */; };
 		1F3E6EC52BD91FCC003EC154 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1F3E6EC42BD91FCC003EC154 /* KeychainSwift */; };
@@ -89,6 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F1059DE2BFF99DB00A7BA96 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		1F1059E02BFFA66D00A7BA96 /* Bantu-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Bantu-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1F169DA12BDA39E30096AB08 /* LoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		1F169DA32BDA3A410096AB08 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		1F9CACBB2BF37FB2004744E4 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 		613656932BB3361300DA8A71 /* Bantu_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1F1059E02BFFA66D00A7BA96 /* Bantu-iOS-Info.plist */,
 				618F543D2BC2F88E0088BD2C /* App */,
 				61C458D42BB838D800AE8CF3 /* UI */,
 				618F543A2BC2F7CE0088BD2C /* Utils  */,
@@ -491,6 +495,7 @@
 				610989B52BC9905700A78684 /* CustomFieldView2.swift */,
 				610989B62BC9905700A78684 /* CustomTextFieldView2.swift */,
 				610989B72BC9905700A78684 /* TypeField.swift */,
+				1F1059DE2BFF99DB00A7BA96 /* SearchTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -674,6 +679,7 @@
 				612E339D2BD528DB00D2F2D3 /* KeyChain.swift in Sources */,
 				61D5B74B2BD4FF4200D96D8C /* RepositorySilvia.swift in Sources */,
 				618F542F2BC2BDFD0088BD2C /* ImageHomeComponent.swift in Sources */,
+				1F1059DF2BFF99DB00A7BA96 /* SearchTextField.swift in Sources */,
 				1FA56BE02BD96FE2003E3628 /* ProfessionalFake.swift in Sources */,
 				618F54422BC2FACB0088BD2C /* Professional.swift in Sources */,
 				618F542D2BC296E50088BD2C /* SettingsView.swift in Sources */,
@@ -883,6 +889,7 @@
 				DEVELOPMENT_TEAM = Z6336UHQ5Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bantu-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -913,6 +920,7 @@
 				DEVELOPMENT_TEAM = Z6336UHQ5Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bantu-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
