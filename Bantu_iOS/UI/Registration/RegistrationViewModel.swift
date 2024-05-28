@@ -23,7 +23,7 @@ final class RegistrationViewModel: ObservableObject {
             showErrorPassword = invalidatePassword()
         }
     }
-    
+    //TODO: Incluir campo profesional para crear datos de profesional. Si marca es professional crear el campo con un id y el resto de valores vacíos. 
     @Published var professional: String = ""
     
     @Published var showErrorEmail = false

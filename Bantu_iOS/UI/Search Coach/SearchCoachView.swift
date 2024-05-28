@@ -22,12 +22,10 @@ struct SearchCoachView: View {
                 HeaderView(headerText: "Profesionales", nameButtonHeader: "Date de alta")
                 
                 //TODO: hacer el componente
-                TextField("Encuentra tu profesional", text: $viewModel.searchText)
-                    .padding()
-                    .background(Color(.systemGray5))
-                    .cornerRadius(8)
+                SearchTextField(textComponent: $viewModel.searchText)
+                    .padding(.top)
                     .padding(.horizontal)
-
+                
                 ScrollView {
                     LazyVStack(spacing: 24) {
                         ForEach(viewModel.users, id: \.id) { user in

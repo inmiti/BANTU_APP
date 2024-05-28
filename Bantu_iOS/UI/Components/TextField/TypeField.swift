@@ -14,6 +14,7 @@ enum FieldType {
     case country
     case province
     case dropdown(options: [String])
+    case search
    
     
 }

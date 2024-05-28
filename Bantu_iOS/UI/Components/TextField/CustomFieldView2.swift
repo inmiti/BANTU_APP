@@ -43,6 +43,12 @@ struct CustomFieldView2: View {
             return AnyView(
                 commonTextField("Your province", imageName: "mappin.and.ellipse.circle")
             )
+        case .search:
+            return AnyView(
+                
+                
+            commonTextField("Encuentra tu profesional", imageName: "magnifyingglass")
+            )
         case .dropdown(let options):
             return AnyView(
                 

@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomTextFieldView2: View {
     @Binding var textComponent: String
     @Binding var isError: Bool
+    
     let fieldType: FieldType
    
     var body: some View {
@@ -18,7 +19,7 @@ struct CustomTextFieldView2: View {
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(Color.bantu_textFields)
                 .frame(height: 62)
-                .shadow(color: Color.gray, radius: 1.0, x:4, y:4)
+                .shadow(color: Color.gray.opacity(0.4), radius: 1.0, x:4, y:4)
                 .overlay {
                     CustomFieldView2(type: fieldType, text: $textComponent)
                 }

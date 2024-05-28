@@ -69,7 +69,6 @@ struct RegistrationView: View {
                     MainButton(textButton: "Register") {
                         Task {
                             await viewModel.registerUser {
-                                //TODO: hay que obtener el token y guardarlo
                                 state = .login(loginVieModel: LoginViewModel(user: viewModel.user))
                             }
                         }
