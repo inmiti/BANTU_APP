@@ -13,12 +13,12 @@ final class LoginViewModel: ObservableObject {
     //let networkResponse = NetworkResponse.shared
     
     // MARK: - Properties -
-    @Published var email = "" {
+    @Published var email = "test@email.es" {
         didSet {
             showErrorEmail = !validateEmail()
         }
     }
-    @Published var password = "" {
+    @Published var password = "password" {
         didSet {
             showErrorPassword = invalidatePassword()
         }

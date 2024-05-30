@@ -35,7 +35,7 @@ struct UserFake {
                                        id: 1,
                                        type: ProfessionalType(
                                           id: 1,
-                                          type: "ENTRENADOR"))
+                                          type: "ENTRENADOR PERSONAL"))
                                       ),
         User(
             id: 3,
@@ -52,7 +52,7 @@ struct UserFake {
                                        id: 2,
                                        type: ProfessionalType(
                                           id: 1,
-                                          type: "ENTRENADOR"))
+                                          type: "ENTRENADOR PERSONAL"))
         ),
         User(
             id: 4,

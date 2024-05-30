@@ -22,7 +22,16 @@ final class SearchCoachViewModel: ObservableObject {
     @Published var searchText = "" {
         didSet {
            //TODO: Que se pueda filtrar también por apellido.
-            filterByNameProfessional = users.filter {($0.name ?? "").lowercased().hasPrefix(searchText.lowercased())}
+            if searchText.isEmpty {
+                filterByNameProfessional = users
+            } else {
+                filterByNameProfessional = users.filter {
+                    ($0.name ?? "").lowercased().hasPrefix(searchText.lowercased()) ||
+                    ($0.lastName1 ?? "").lowercased().hasPrefix(searchText.lowercased()) ||
+                    ($0.professional?.type?.type ?? "").lowercased().elementsEqual(searchText.lowercased())
+                }
+            }
+            
         }
     }
     @Published var users = [User]()
@@ -54,6 +63,7 @@ final class SearchCoachViewModel: ObservableObject {
         switch await task.result {
             case .success(let response):
             users = response
+            filterByNameProfessional = users
             print("los prog \(users)")
             case .failure(let error as NetworkErrors):
                 print("error \(error)")

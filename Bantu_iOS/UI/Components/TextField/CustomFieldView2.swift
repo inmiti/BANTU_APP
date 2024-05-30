@@ -45,8 +45,6 @@ struct CustomFieldView2: View {
             )
         case .search:
             return AnyView(
-                
-                
             commonTextField("Encuentra tu profesional", imageName: "magnifyingglass")
             )
         case .dropdown(let options):
