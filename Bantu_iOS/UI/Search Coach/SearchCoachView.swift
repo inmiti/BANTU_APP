@@ -22,30 +22,41 @@ struct SearchCoachView: View {
             VStack {
                 // Header
                 HeaderView(headerText: "Profesionales", nameButtonHeader: "Date de alta")
-                
-                // Search
-                SearchTextField(textComponent: $viewModel.searchText)
-                    .padding(.top)
-                    .padding(.horizontal)
-                
-                // Professional list
-                ScrollView {
-                    LazyVStack(spacing: 24) {
-                        ForEach(viewModel.filterByNameProfessional, id: \.id) { user in
-                            SearchCoachCell(name: user.name ?? "" ,
-                                            firstName: user.lastName1 ?? "",
-                                            coachDescription: user.professional?.description ?? "",
-                                            photo: user.photo?.securePath ?? ""
-                            )
-                            .background(Color.bantu_background)
-                            .cornerRadius(16)
-                            .shadow(color: .gray.opacity(0.4), radius: 3, x: 0, y: 4)
+        
+                ScrollView (showsIndicators: false){
+                    // Search
+                    SearchTextField(textComponent: $viewModel.searchText)
+                        .padding(.top)
+                        .padding(.horizontal)
+                    
+                    // Professional list
+                    NavigationStack {
+                        LazyVStack(spacing: 24) {
+                            ForEach(viewModel.filterByNameProfessional, id: \.id) { user in
+                                NavigationLink(destination: {
+                                    //Destino
+                                    DetailProfessionalView(professional: user)
+                                }, label: {
+                                    //Celda personalizada
+                                    SearchCoachCell(name: user.name ?? "" ,
+                                                    firstName: user.lastName1 ?? "",
+                                                    coachDescription: user.professional?.description ?? "",
+                                                    photo: user.photo?.securePath ?? ""
+                                    )
+                                    .background(Color.bantu_background)
+                                    .cornerRadius(16)
+                                .shadow(color: .gray.opacity(0.4), radius: 3, x: 0, y: 4)
+                                })
+                            }
                         }
+                        .padding()
+                        .padding(.horizontal)
                     }
-                    .padding(.bottom, 50)
                 }
+                .padding(.bottom, 20)
                 .background(Color.bantu_background)
-                .padding()
+                
+                
             }
             .background(Color.bantu_background)
             .ignoresSafeArea(edges: .top)

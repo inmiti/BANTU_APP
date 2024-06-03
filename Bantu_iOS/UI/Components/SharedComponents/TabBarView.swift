@@ -24,6 +24,7 @@ struct TabBarView: View {
                         Text("Social")
                     }
                 ChatsView()
+                //                    .badge(<#T##count: Int##Int#>) para indicar nº mensajes sin leer
                     .tabItem {
                         Image(systemName: "ellipsis.message")
                         Text("Chats")
