@@ -16,11 +16,11 @@ struct MainButton: View {
         }
                , label: {
             Text(textButton)
+                .foregroundColor(.white)
         })
         .buttonStyle(.plain)
         .frame(height: 60)
         .frame(maxWidth: .infinity)
-        .foregroundColor(.black)
         .background(Color.bantu_orange)
         .cornerRadius(30)
       

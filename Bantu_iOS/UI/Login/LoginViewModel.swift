@@ -9,15 +9,16 @@ import Foundation
 
 @MainActor
 final class LoginViewModel: ObservableObject {
-
-    let networkResponse = NetworkResponse.shared
+    //TODO: Quito shared y meto dependencias casos de uso, PROBAR QUE FUNCIONA SIN EL
+    //let networkResponse = NetworkResponse.shared
+    
     // MARK: - Properties -
-    @Published var email = "" {
+    @Published var email = "test@email.es" {
         didSet {
             showErrorEmail = !validateEmail()
         }
     }
-    @Published var password = "" {
+    @Published var password = "password" {
         didSet {
             showErrorPassword = invalidatePassword()
         }
@@ -28,7 +29,25 @@ final class LoginViewModel: ObservableObject {
     @Published var showErrorEmail = false
     @Published var showErrorPassword = false
     @Published var showErrorLogin = false
+    
     var token: String = ""
+    
+    private var useCase: UseCaseProtocol
+    
+    @Published var user: User?
+    
+    init(useCase: UseCaseProtocol = UseCaseFake(),
+         user: User? = nil) {
+        self.useCase = useCase
+        self.user = user
+        
+        if let user = user {
+            self.email = user.email ?? ""
+            self.password = user.password ?? ""
+            
+        }
+    }
+    
     
     // MARK: - Functions -
     
@@ -42,20 +61,22 @@ final class LoginViewModel: ObservableObject {
      func invalidatePassword() -> Bool {
          password.count < 6
     }
-    
+   
+    //TODO: COMPROBAR QUE ASYNC AWAIT FUNCIONA SIN TASK Y SIN COMPLETION
+    //TODO: Verificar si tengo el token en keychain, hacer la llamada solo si no está
    func login(completion: () -> ()) async {
         showErrorLogin = false
         loading = true
         let task = Task(priority: .utility) {
-            return try await networkResponse.login(email: email, password: password)
+            return try await useCase.login(email: email, password: password)
         }
         switch await task.result {
         case .success(let response):
-            token = response.accesToken ?? ""
+            token = response.accesToken
             print(token)
             onLoginResponse()
             completion()
-        case .failure(let error as NetworkErrors):
+        case .failure( _ as NetworkErrors):
             showErrorLogin = true
         case .failure(_):
             showErrorLogin = true

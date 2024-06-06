@@ -14,12 +14,12 @@ final class ModelsTest: XCTestCase {
         let modelProfessional = ProfessionalFake().responseProfessional
         XCTAssertNotNil(modelProfessional)
         XCTAssertNotEqual(modelProfessional.first?.id, 2)
-        XCTAssertEqual(modelProfessional.count, 2)
+        XCTAssertEqual(modelProfessional.count, 5)
     }
     func testModelUser() throws {
         let modelUser = UserFake().responseUser
         XCTAssertNotNil(modelUser)
-        XCTAssertEqual(modelUser.first?.name, "JOSEP")
-        XCTAssertEqual(modelUser.count, 2)
+        XCTAssertEqual(modelUser.first?.name, "TestUsuario")
+        XCTAssertEqual(modelUser.count, 3)
     }
 }

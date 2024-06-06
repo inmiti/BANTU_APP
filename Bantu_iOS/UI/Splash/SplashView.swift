@@ -10,7 +10,7 @@ import CoreData
 
 enum ViewState {
     case splash
-    case login
+    case login(loginVieModel: LoginViewModel)
     case home
     case register
 }
@@ -25,8 +25,8 @@ struct SplashView: View {
             switch viewState {
             case .splash:
                 splashSection
-            case .login:
-                LoginView(state: $viewState)
+            case .login(let loginViewModel):
+                LoginView(loginViewModel: loginViewModel, state: $viewState)
             case .home:
                TabBarView()
             case .register:
@@ -36,24 +36,25 @@ struct SplashView: View {
     }
     
     private var splashSection: some View {
-//        Group {
-            ZStack {
-                //Background
-                Image(decorative:"")
-                    .resizable()
-                    .background(Color("backgroundBantu"))
-                    .edgesIgnoringSafeArea(.all)
-                
-                Image(String("Icon2"))
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            withAnimation {
-                                viewState = .login
-                            }
+        ZStack {
+            Image(decorative:"")
+                .resizable()
+                .background(Color("backgroundBantu"))
+                .edgesIgnoringSafeArea(.all)
+            Image(String("Icon2"))
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
+            //TODO: animación con icono
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        withAnimation {
+                            viewState = .login(loginVieModel: LoginViewModel(user: nil))
                         }
                     }
-            }
+                }
         }
+    }
 }
 
 //#Preview {
@@ -67,5 +68,3 @@ struct SplashView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
-
-

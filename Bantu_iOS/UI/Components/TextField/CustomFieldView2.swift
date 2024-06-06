@@ -10,7 +10,10 @@ import SwiftUI
 struct CustomFieldView2: View {
     var type: FieldType
     @Binding var text: String
-    @State private var selection: String = ""
+//    @State private var selection: String = ""
+    @State private var isExpanded: Bool = false
+    @State private var selectedOption: String = "¿Eres profesional del bienestar?"
+    @State private var options: [String] = []
     
     var body: some View {
         switch type {
@@ -21,9 +24,10 @@ struct CustomFieldView2: View {
         case .password:
             return AnyView(
                 SecureField("Your password", text: $text)
-                    .padding(.leading, 40)
+                    .padding(.leading, 54)
+                    .background(Color.bantu_textFields)
                     .overlay(
-                        commonImageOverlay("exclamationmark.lock")
+                        commonImageOverlay("lock.rectangle")
                     )
             )
         case .username:
@@ -39,41 +43,57 @@ struct CustomFieldView2: View {
             return AnyView(
                 commonTextField("Your province", imageName: "mappin.and.ellipse.circle")
             )
+        case .search:
+            return AnyView(
+            commonTextField("Encuentra tu profesional", imageName: "magnifyingglass")
+            )
         case .dropdown(let options):
             return AnyView(
-                Picker(selection: $selection, label: Text("")) {
+                
+                Menu(content: {
                     ForEach(options, id: \.self) { option in
-                        Text(option).tag(option)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .padding(.leading, 40)
+                        Button(option) {
+                            selectedOption = option
+                        }}}, label: {
+//                    Label(selectedOption, systemImage: "chevron.down")
+                            HStack {
+                                Image(systemName: "person.text.rectangle")
+                                    .foregroundColor(.gray.opacity(0.4))
+                                Text(selectedOption)
+                                    .padding(.leading, 8)
+                                    .foregroundColor(selectedOption == "¿Eres profesional del bienestar?" ? .gray.opacity(0.5) : .black)
+                                Spacer()
+                                Image(systemName: "chevron.down")
+                                    .foregroundColor(.gray.opacity(0.4))
+                            }
+                            .padding()
+                            .background(Color.bantu_textFields)
+                            .cornerRadius(30)
+                })
             )
         }
     }
     
     func commonTextField(_ placeholder: String, imageName: String) -> some View {
         TextField(placeholder, text: $text)
-            .padding(.leading, 40)
+            .padding(.leading, 54)
             .overlay(
                 commonImageOverlay(imageName)
             )
-            .background(Color.white)
+            .background(Color.bantu_textFields)
             .frame(height: 62)
             .keyboardType(.emailAddress)
-            .background(Color.white)
             .cornerRadius(30)
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
-            .opacity(0.8)
     }
     
     func commonImageOverlay(_ imageName: String) -> some View {
         HStack {
             Image(systemName: imageName)
-                .foregroundColor(.gray)
+                .foregroundColor(.gray.opacity(0.4))
                 .frame(width: 20, height: 20)
-                .padding(.leading, 10)
+                .padding()
             Spacer()
         }
     }
@@ -88,7 +108,6 @@ struct CustomFieldView2: View {
 struct CustomFieldView2_Previews: PreviewProvider {
     static var previews: some View {
         CustomFieldView2(
-            type:.dropdown(options: ["Si", "No"]),
-            text: .constant("¿Eres profesional? "))
+            type:.dropdown(options: ["Profesional", "Usuario"]), text: .constant("¿Eres profesional del bienestar?"))
     }
 }

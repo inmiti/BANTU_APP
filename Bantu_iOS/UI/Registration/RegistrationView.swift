@@ -14,11 +14,13 @@ enum TypeProfessional: String, CaseIterable {
 }
 
 struct RegistrationView: View {
-    @State private var selectedType: TypeProfessional = .professional
-    @State private var isPickerVisible = false
-    @StateObject var viewModel = RegistrationViewModel()
     @Binding var state: ViewState
-    let options = ["Si", "No"]
+    
+    @State private var selectedType: TypeProfessional = .professional
+//    @State private var isPickerVisible = false
+    @StateObject var viewModel = RegistrationViewModel()
+    private let options = ["Profesional", "Usuario"]
+    
     var body: some View {
         ZStack{
             Image(decorative:"")
@@ -29,7 +31,7 @@ struct RegistrationView: View {
             VStack (spacing:11){
                 Image(decorative: "Icon2")
                     .resizable()
-                    .frame(width:80, height: 80)
+                    .frame(width:60, height: 60)
                 Text("Register")
                     .font(.system(size: 28))
                     .bold()
@@ -41,7 +43,7 @@ struct RegistrationView: View {
                 
                 VStack(alignment: .leading, spacing: 20){
                     CustomTextFieldView2(
-                        textComponent: $viewModel.nickName,
+                        textComponent: $viewModel.userName,
                         isError: .constant(false),
                         fieldType: .username
                     )
@@ -59,23 +61,35 @@ struct RegistrationView: View {
                     )
                     
                     CustomTextFieldView2(
-                        textComponent: $viewModel.password,
+                        textComponent: $viewModel.professional,
                         isError: .constant(false),
                         fieldType: .dropdown(options: options)
                     )
                     
-                    MainButton(textButton: "Sign in") {
-                        //                        Task {
-                        //                            await viewModel.registerUser {
-                        //                                state = .login
-                        //                            }
-                        //                        }
+                    MainButton(textButton: "Register") {
+                        Task {
+                            await viewModel.registerUser {
+                                state = .login(loginVieModel: LoginViewModel(user: viewModel.user))
+                            }
+                        }
+                         
                     }
-                    .padding([.leading, .trailing], 35)
+                    .padding([.leading, .trailing], 32)
+                    .padding()
                 }
             }
-            .padding(.horizontal, 35)
+            .padding(.horizontal, 32)
         }
+        .navigationBarItems(leading: Button(
+            action: {
+                state = .login(loginVieModel: LoginViewModel(user: nil))
+            }, label: {
+                HStack{
+                    Image(systemName: "chevron.left")
+                    Text("Volver")
+                }
+                .foregroundColor(.blue)
+        }))
     }
 }
 

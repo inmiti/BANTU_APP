@@ -9,7 +9,10 @@ import SwiftUI
 
 struct SocialView: View {
     var body: some View {
-        Text("Social ")
+        VStack {
+            Text("Social ")
+            Image(systemName: "person")
+        }
     }
 }
 

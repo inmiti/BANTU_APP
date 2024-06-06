@@ -11,9 +11,9 @@ import XCTest
 
 final class LoginTests: XCTestCase {
     
-    func testLoginWithExistingUserAndPassword(){
+    func testLoginWithExistingUserAndPassword() async {
         do {
-           let auth = try NetworkResponse().mockedLogin(email: "mocked", password: "mocked")
+            let auth = try await NetworkResponseFake().login(email: "test@email.es", password: "password")
             XCTAssertNotNil(auth.accesToken)
             XCTAssertNotNil(auth.refreshToken)
         }catch {
@@ -21,10 +21,21 @@ final class LoginTests: XCTestCase {
         }
     }
     
-    func testLoginWithNotUserAndPassword(){
-        XCTAssertThrowsError(try NetworkResponse().mockedLogin(email: "mocke", password: "mocke")){error in
-            XCTAssertTrue(error.localizedDescription == error.localizedDescription)
+    func testLoginWithNotUserAndPassword() async {
+        do {
+            _ = try await NetworkResponseFake().login(email: "mocke", password: "mocke")
+            XCTFail("No se lanzó ningún error, se esperaba uno.")
+        } catch {
+            // El error fue lanzado, la prueba es exitosa
+            XCTAssertTrue(true)
         }
     }
+
+
+//    func testLoginWithNotUserAndPassword(){
+//        XCTAssertThrowsError(try NetworkResponse().mockedLogin(email: "mocke", password: "mocke")){error in
+//            XCTAssertTrue(error.localizedDescription == error.localizedDescription)
+//        }
+//    }
 }
 

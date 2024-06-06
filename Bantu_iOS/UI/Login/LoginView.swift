@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @StateObject var loginViewModel = LoginViewModel()
-    @Environment(\.colorScheme) var colorScheme
+    @StateObject var loginViewModel: LoginViewModel
+//    @Environment(\.colorScheme) var colorScheme
     @Binding var state: ViewState
     
     
@@ -26,7 +26,8 @@ struct LoginView: View {
                 VStack(spacing: 11) {
                     Image("Icon2")
                         .resizable()
-                        .frame(width: 150, height: 150)
+                        .scaledToFit()
+                        .frame(width: 60, height: 60)
                     //Title
                     Text("Wellcome Back")
                         .font(.system(size: 28))
@@ -34,6 +35,7 @@ struct LoginView: View {
                         .id(2)
                     Text("Login to your Account")
                         .font(.system(size: 15))
+                        .padding(.bottom, 20)
                         .id(3)
                     VStack(alignment: .leading, spacing: 20){
                         CustomTextFieldView2(textComponent: $loginViewModel.email,
@@ -67,6 +69,7 @@ struct LoginView: View {
                             }
                         }
                         .padding(.horizontal, 35)
+                        .padding()
                         //.disabled(!loginViewModel.validateFields())
                         
                         //Registration
@@ -75,18 +78,19 @@ struct LoginView: View {
                         } label: {
                             Text("Create an account")
                                 .font(.system(size: 14))
+                                .foregroundColor(.white)
                         }
-                        .buttonStyle(.bordered)
-                        .frame(width: 150, height: 30)
+                        //.buttonStyle(.bordered)
+                        .frame(width: 150, height: 42)
                         .foregroundColor(.black)
-                        .background(Color.bantu_orange)
-                        .cornerRadius(30)
+                        .background(Color.bantu_pink)
+                        .cornerRadius(20)
+                        .padding()
                         .id(12)
                     }
                 }
                 .padding(35)
                 .lineSpacing(10.0)
-                
             }
             .navigationBarHidden(true)
           
@@ -100,7 +104,8 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(state: .constant(.login))
+        LoginView(loginViewModel: LoginViewModel(user: nil),
+                  state: .constant(.login(loginVieModel: LoginViewModel(user: nil))))
     }
 }
 

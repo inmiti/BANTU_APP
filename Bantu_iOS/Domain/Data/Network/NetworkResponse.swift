@@ -8,28 +8,36 @@
 import Foundation
 struct VoidResponse: Codable {}
 
-final class NetworkResponse {
+protocol NetworkResponseProtocol {
+    func login(email: String, password: String) async throws -> AuthResponse
+    func getProfessionals(token: String) async throws -> [User]
+    func registerUser(user: User) async throws -> User
+}
+
+final class NetworkResponse: NetworkResponseProtocol {
     static let shared = NetworkResponse()
+    
     func login(email: String, password: String) async throws -> AuthResponse {
         try await checkResponse(request: .request(networkRequest: .login(email: email, password: password)), type: AuthResponse.self)
     }
     
-    // Para test
-    func mockedLogin(email: String, password: String) throws -> AuthResponse {
-           if(email == "mocked" && password == "mocked"){
-               return AuthResponse(accesToken: "asdasdasd", refreshToken: "dasdasd")
-           }else{
-               throw NetworkErrors.general
-           }
-       }
+//    func mockedLogin(email: String, password: String) throws -> AuthResponse {
+//           if(email == "mocked" && password == "mocked"){
+//               return AuthResponse(accesToken: "asdasdasd", refreshToken: "dasdasd")
+//           }else{
+//               throw NetworkErrors.general
+//           }
+//       }
     
-    func registerUser(user: User) async throws -> VoidResponse{
-        try await checkResponse(request: .request(networkRequest: .registerUser(user: user)), type: VoidResponse.self)
+    func registerUser(user: User) async throws -> User {
+        try await checkResponse(request: .request(networkRequest: .registerUser(user: user)), type: User.self)
     }
     
-    func getProfessionals(token: String) async throws -> [Professional] {
-        try await checkResponse(request: .request(networkRequest: .getProfessionals(token: token)), type: [Professional].self)
+    func getProfessionals(token: String) async throws -> [User] {
+        //TODO: Revisar que está bien puesto la url de la api, que me devuelve usuarios, no profesionales. 
+        try await checkResponse(request: .request(networkRequest: .getProfessionals(token: token)), type: [User].self)
     }
+    
     // Método para obtener un JSON lanzando una petición asíncrona y controlando los errores
     func checkResponse<T: Codable>(request: URLRequest,
                                    type: T.Type,
@@ -74,4 +82,30 @@ final class NetworkResponse {
     }
 }
 
-
+// Clase para mockear y tests.
+final class NetworkResponseFake: NetworkResponseProtocol {
+    
+    func login(email: String, password: String) async throws -> AuthResponse {
+        if(email == "test@email.es" && password == "password"){
+            return AuthResponse(accesToken: "asdasdasd", refreshToken: "dasdasd")
+        }else{
+            throw NetworkErrors.general
+        }
+    }
+    
+    func registerUser(user: User) async throws -> User {
+        if(user.name == "userTest" && user.email == "test@email.es" && user.password == "password") {
+            return user
+        } else {
+            throw NetworkErrors.general
+        }
+    }
+    
+    func getProfessionals(token: String) async throws -> [User] {
+        if token == "asdasdasd" {
+            return UserFake().responseUser
+        } else{
+            throw NetworkErrors.general
+        }
+    }
+}
