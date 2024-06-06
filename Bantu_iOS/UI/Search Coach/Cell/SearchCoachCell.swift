@@ -66,5 +66,6 @@ struct SearchCoachCell: View {
 struct SearchCoachCell_Previews: PreviewProvider {
     static var previews: some View {
         SearchCoachCell(name: "Eva", firstName: "Nasarre", coachDescription: "Esto es una breve descripción que varia segun el autor", photo: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300")
+            .previewLayout(.sizeThatFits)
     }
 }

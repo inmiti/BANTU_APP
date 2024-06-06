@@ -11,57 +11,76 @@ struct DetailProfessionalView: View {
     var professional: User
     var body: some View {
         ZStack {
+            //Background
+            Image(decorative:"")
+                .resizable()
+                .background(Color.bantu_background)
+                .edgesIgnoringSafeArea(.all)
             
-            Rectangle()
-                .frame(height: 430)
-                .foregroundColor(.white)
+            VStack {
+                // Header
+                DetailHeaderView(photo: professional.photo,
+                                 name: professional.name,
+                                 firstName: professional.lastName1)
                 .ignoresSafeArea(edges: .top)
-            
-            Rectangle()
-                .fill(LinearGradient(
-                    colors: [Color.bantu_orange, Color.bantu_pink],
-                    startPoint: .bottom,
-                    endPoint: .top)
-                )
-//                .opacity(0.90)
-                .ignoresSafeArea()
-                .frame(height: 400)
-            
-            VStack{
-               Spacer()
-               
-                AsyncImage(url: URL(string: professional.photo ?? "person.circle")) { image in
-                    image
-                        .resizable()
-                        .frame(width: 180, height: 180)
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(30)
-                        .shadow(color: .black.opacity(0.5), radius: 4, x: 0, y: 4)
-                }
-
-            placeholder: {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 180, height: 180)
-                        .clipShape(Circle())
-                        .foregroundColor(.gray)
-
+                
+                // Description
+                if let description = professional.professional?.description {
+                    Text(description)
+                        .foregroundColor(.bantu_text)
+                        .font(.title2)
+                        .padding(.horizontal, 24)
+                        .padding()
                 }
                 
-                if let name = professional.name, let firstname = professional.lastName1 {
-                    Text("\(name) \(firstname)")
-                        .padding(.top, 48)
-                        .padding(.bottom, 24)
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .fontWeight(.semibold)
+                // Button "Contáctame"
+                Button {
+                    //Action:
+                    // TODO: Incluir accion de navegar al chat con el profesional
+                } label: {
+                    HStack(spacing: 24 ){
+                        Image(systemName: "ellipsis.message")
+                            .foregroundColor(.black)
                         
+                        Text("Contáctame")
+                            .foregroundColor(.bantu_orange)
+                            .font(.title2)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 24)
+                    .padding()
                 }
+                // Button "Accede a mis entrenamientos"
+                HStack {
+                    Button("Accede a mis entrenamientos") {
+                        // Action
+                        // TODO: Incluir acción del boton navegar a sus entrenamientos
+                    }
+                    .foregroundColor(.black)
+                    .font(.title2)
+                    Spacer()
                     
-               
+                }
+                .padding(.horizontal, 24)
+                .padding()
+                
+                // Button "Mis publicaciones
+                HStack {
+                    Button("Mis publicaciones") {
+                        // Action
+                        // TODO: Incluir acción del boton navegar a sus entrenamientos
+                    }
+                    .foregroundColor(.black)
+                    .font(.title2)
+                    Spacer()
+                }
+                .padding(.horizontal, 24)
+                .padding()
+                
+                Spacer()
             }
-            .frame(height: 400)
-            
+                
+                Spacer()
         }
     }
 }
