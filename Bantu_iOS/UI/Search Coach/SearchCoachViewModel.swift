@@ -31,9 +31,9 @@ final class SearchCoachViewModel: ObservableObject {
                     ($0.professional?.type?.type ?? "").lowercased().elementsEqual(searchText.lowercased())
                 }
             }
-            
         }
     }
+    
     @Published var users = [User]()
     @Published var filterByNameProfessional: [User] = []
 //    @Published var coachersType: CoachType = .entrenador {

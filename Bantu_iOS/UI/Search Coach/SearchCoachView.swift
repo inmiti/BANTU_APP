@@ -22,6 +22,7 @@ struct SearchCoachView: View {
             VStack {
                 // Header
                 HeaderView(headerText: "Profesionales", nameButtonHeader: "Date de alta")
+                    .ignoresSafeArea(edges: .top)
         
                 ScrollView (showsIndicators: false){
                     // Search

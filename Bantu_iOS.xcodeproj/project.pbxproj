@@ -14,6 +14,7 @@
 		1F898C282C160D040013E622 /* SocialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F898C272C160D040013E622 /* SocialViewModel.swift */; };
 		1F898C2A2C160D770013E622 /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F898C292C160D770013E622 /* Social.swift */; };
 		1F898C2D2C160F650013E622 /* SocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F898C2C2C160F650013E622 /* SocialCell.swift */; };
+		1F898C2F2C1776FF0013E622 /* SocialFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F898C2E2C1776FF0013E622 /* SocialFake.swift */; };
 		1F9CACBC2BF37FB2004744E4 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9CACBB2BF37FB2004744E4 /* ChatsView.swift */; };
 		1FA56BDC2BD960CF003E3628 /* KeychainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA56BDB2BD960CF003E3628 /* KeychainTest.swift */; };
 		1FA56BE02BD96FE2003E3628 /* ProfessionalFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA56BDF2BD96FE2003E3628 /* ProfessionalFake.swift */; };
@@ -101,6 +102,7 @@
 		1F898C272C160D040013E622 /* SocialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewModel.swift; sourceTree = "<group>"; };
 		1F898C292C160D770013E622 /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
 		1F898C2C2C160F650013E622 /* SocialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCell.swift; sourceTree = "<group>"; };
+		1F898C2E2C1776FF0013E622 /* SocialFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFake.swift; sourceTree = "<group>"; };
 		1F9CACBB2BF37FB2004744E4 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		1FA56BDB2BD960CF003E3628 /* KeychainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTest.swift; sourceTree = "<group>"; };
 		1FA56BDF2BD96FE2003E3628 /* ProfessionalFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalFake.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				1FA56BDF2BD96FE2003E3628 /* ProfessionalFake.swift */,
 				1FA56BE32BD976DF003E3628 /* UserFake.swift */,
 				1FFC78DC2BF3D6EA0015C454 /* StatusModels.swift */,
+				1F898C2E2C1776FF0013E622 /* SocialFake.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				618F54402BC2FAC10088BD2C /* User.swift in Sources */,
 				1FA56BE42BD976DF003E3628 /* UserFake.swift in Sources */,
 				61CBB0BA2BCA667800138F67 /* AlertView.swift in Sources */,
+				1F898C2F2C1776FF0013E622 /* SocialFake.swift in Sources */,
 				1F169DA42BDA3A410096AB08 /* AuthResponse.swift in Sources */,
 				61C2EF832BCBD5EF00DB96F9 /* Professional_Type.swift in Sources */,
 			);

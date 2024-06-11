@@ -12,8 +12,10 @@ protocol NetworkResponseProtocol {
     func login(email: String, password: String) async throws -> AuthResponse
     func getProfessionals(token: String) async throws -> [User]
     func registerUser(user: User) async throws -> User
+    func getSocialPublications(token: String) async throws -> [Social] 
 }
 
+// Real
 final class NetworkResponse: NetworkResponseProtocol {
     static let shared = NetworkResponse()
     
@@ -36,6 +38,11 @@ final class NetworkResponse: NetworkResponseProtocol {
     func getProfessionals(token: String) async throws -> [User] {
         //TODO: Revisar que está bien puesto la url de la api, que me devuelve usuarios, no profesionales. 
         try await checkResponse(request: .request(networkRequest: .getProfessionals(token: token)), type: [User].self)
+    }
+    
+    func getSocialPublications(token: String) async throws -> [Social] {
+        //TODO: Pendiente hacer api
+        return []
     }
     
     // Método para obtener un JSON lanzando una petición asíncrona y controlando los errores
@@ -82,7 +89,7 @@ final class NetworkResponse: NetworkResponseProtocol {
     }
 }
 
-// Clase para mockear y tests.
+// Fake ( mocks & testing)
 final class NetworkResponseFake: NetworkResponseProtocol {
     
     func login(email: String, password: String) async throws -> AuthResponse {
@@ -104,6 +111,14 @@ final class NetworkResponseFake: NetworkResponseProtocol {
     func getProfessionals(token: String) async throws -> [User] {
         if token == "asdasdasd" {
             return UserFake().responseUser
+        } else{
+            throw NetworkErrors.general
+        }
+    }
+    
+    func getSocialPublications(token: String) async throws -> [Social] {
+        if token == "asdasdasd" {
+            return SocialFake().socialResponse
         } else{
             throw NetworkErrors.general
         }

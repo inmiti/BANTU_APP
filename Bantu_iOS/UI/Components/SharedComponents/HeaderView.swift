@@ -25,9 +25,6 @@ struct HeaderView: View {
                 .opacity(0.90)
                 .ignoresSafeArea()
                 .frame(height: 130)
-                
-            
-            
             
             HStack(spacing: 24) {
                 Image("Icon2")
@@ -37,7 +34,7 @@ struct HeaderView: View {
                     .padding(.top, 32)
                 
                 Text(headerText)
-                    .font(.system(size: 30))
+                    .font(.system(size: 28))
                     .fontWeight(.semibold)
                     .foregroundColor(Color.white)
                     .lineLimit(1)
@@ -47,9 +44,9 @@ struct HeaderView: View {
                     //TODO: Añadir variable para acción
                 }, label: {
                     Text(nameButtonHeader)
-                        .font(.callout)
+                        .font(.system(size: 15))
                         .foregroundColor(.black)
-                        .frame(maxWidth: 50)
+                        .frame(maxWidth: 70)
                     Image(systemName: "plus")
                         .foregroundColor(.black)
                 })
@@ -69,7 +66,7 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderView(headerText: "Profesionales",
-                   nameButtonHeader : "Date de alta")
+                   nameButtonHeader : "Publica contenido")
         .previewLayout(.sizeThatFits)
     }
 }

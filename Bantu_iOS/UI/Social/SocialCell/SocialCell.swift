@@ -12,12 +12,9 @@ struct SocialCell: View {
     @State var photo: String
     @State var content: String
     var body: some View {
-//            RoundedRectangle(cornerRadius: 16)
-//                .fill(Color.bantu_cell)
-//                .frame(maxHeight: .infinity)
-//                .overlay {
                     VStack {
                         HStack {
+                            // Professional photo
                             AsyncImage(url: URL(string: photo)) { image in
                                 image
                                     .resizable()
@@ -31,6 +28,8 @@ struct SocialCell: View {
                                     .frame(width: 40, height: 40)
                                     .clipShape(Circle())
                             }
+                            
+                            // Professional name
                             Text(name)
                                 .fontWeight(.semibold)
                                 .font(.system(size: 16))
@@ -38,6 +37,9 @@ struct SocialCell: View {
                         }
                         .padding()
                         
+                        //Resource
+                        //TODO: Si es jpg, mp3 o mp4 dependiendo del tipo de archivo código para descargar y presentación. Por ahora solo para image
+                       
                         AsyncImage(url: URL(string: photo)) { image in
                             image
                                 .resizable()
@@ -51,10 +53,12 @@ struct SocialCell: View {
                         }
                         .padding(.horizontal)
                         
+                        // Publication content
                         Text(content)
                             .font(.system(size: 18))
                             .padding()
                     }
+                    // Cell background
                     .background(
                         RoundedRectangle(cornerRadius: 16)
                             .fill(Color.bantu_cell)

@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct SocialView: View {
+    @StateObject var viewModel = SocialViewModel()
     var body: some View {
-        VStack {
-            Text("Social ")
-            Image(systemName: "person")
+        ZStack {
+            //Background
+            Image(decorative:"")
+                .resizable()
+                .background(Color.bantu_background)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                HeaderView(headerText: "Bantu Social", nameButtonHeader: "Publica contenido")
+                
+                Spacer()
+              
+                List {
+                    
+                }
+            }
+            .ignoresSafeArea(edges: .top)
         }
     }
 }
