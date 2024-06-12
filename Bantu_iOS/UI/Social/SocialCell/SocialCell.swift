@@ -11,6 +11,7 @@ struct SocialCell: View {
     @State var name: String
     @State var photo: String
     @State var content: String
+    @State var resource: String
     var body: some View {
                     VStack {
                         HStack {
@@ -25,6 +26,7 @@ struct SocialCell: View {
                                 Image(systemName: "person.circle")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
+                                    .foregroundColor(.gray)
                                     .frame(width: 40, height: 40)
                                     .clipShape(Circle())
                             }
@@ -33,6 +35,7 @@ struct SocialCell: View {
                             Text(name)
                                 .fontWeight(.semibold)
                                 .font(.system(size: 16))
+                                .foregroundColor(.bantu_text)
                             Spacer()
                         }
                         .padding()
@@ -40,7 +43,7 @@ struct SocialCell: View {
                         //Resource
                         //TODO: Si es jpg, mp3 o mp4 dependiendo del tipo de archivo código para descargar y presentación. Por ahora solo para image
                        
-                        AsyncImage(url: URL(string: photo)) { image in
+                        AsyncImage(url: URL(string: resource)) { image in
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -49,6 +52,7 @@ struct SocialCell: View {
                             Image(systemName: "photo.on.rectangle")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
+                                .foregroundColor(.gray)
                                 .frame(maxHeight: 200)
                         }
                         .padding(.horizontal)
@@ -57,6 +61,7 @@ struct SocialCell: View {
                         Text(content)
                             .font(.system(size: 18))
                             .padding()
+                            .foregroundColor(.bantu_text)
                     }
                     // Cell background
                     .background(
@@ -70,8 +75,9 @@ struct SocialCell: View {
 struct SocialCell_Previews: PreviewProvider {
     static var previews: some View {
         SocialCell(name: "eva",
-                   photo:"https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300",
-        content: "Aquí os dejo un listado de ejercicios para poner a punto tu abdomen. Espero que os guste, sígueme para ver mas publicaciones como ésta.")
+                   photo:"https://.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300",
+                   content: "Aquí os dejo un listado de ejercicios para poner a punto tu abdomen. Espero que os guste, sígueme para ver mas publicaciones como ésta.",
+                   resource: "https://.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300")
         .previewLayout(.sizeThatFits)
     }
 }

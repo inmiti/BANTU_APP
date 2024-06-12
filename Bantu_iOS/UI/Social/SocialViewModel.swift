@@ -9,7 +9,7 @@ import Foundation
 
 final class SocialViewModel: ObservableObject {
     
-    @Published var publications: [Social]
+    @Published var publications = [Social]()
     private var useCase: UseCaseProtocol
     
     init(useCase: UseCaseProtocol = UseCaseFake()) {
@@ -24,6 +24,7 @@ final class SocialViewModel: ObservableObject {
         let task = Task(priority: .background) {
                 return try await useCase.getSocialPublications(token:token)
             }
+        
         switch await task.result {
             case .success(let response):
             publications = response
@@ -38,10 +39,40 @@ final class SocialViewModel: ObservableObject {
     
     func loadMockData() {
          let fakeSocial = [
-            User(id: 1, name: "Jonh", lastName1: "String", photo: "https://www.istockphoto.com/es/foto/una-turista-sonriente-con-un-abrigo-amarillo-disfruta-del-clima-en-el-parque-de-oto%C3%B1o-gm1688423980-537272929", active: true, professional: Professional(description: "soy fisioterapeuta desde ....", id: 1, type: ProfessionalType(id: 1, type: "fisioterapeuta"))),
-            User(id: 2, name: "Mun", lastName1: "String", photo: "https:\\photo", active: true, professional: Professional(description: "soy fisioterapeuta desde ....", id: 1, type: ProfessionalType(id: 1, type: "fisioterapeuta"))),
+                Social(professional:User(
+                    name: "eva",
+                    photo: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300",
+                    password: "$2b$12$xFyrpIOgKuu1awuFNPNn8OQRkKXS9uh7au0A.3S/BUz3SwURnjR3y"),
+                       resource: "https://",
+                       description: "Descripcion publicacion en la parte social"),
+                Social(professional:User(
+                    name: "david",
+                    photo: "https://"),
+                       resource: "https://",
+                       description: "Publicacion de David en la parte social"),
+                Social(professional:User(
+                    name: "pilar",
+                    photo: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300",
+                    password: "$2b$12$xFyrpIOgKuu1awuFNPNn8OQRkKXS9uh7au0A.3S/BUz3SwURnjR3y"),
+                       resource: "https://",
+                       description: "Descripcion publicacion en la parte social"),
+                Social(professional:User(
+                    name: "nico",
+                    photo: "https://"),
+                       resource: "https://",
+                       description: "Descripcion publicacion en la parte social"),
+                Social(professional:User(
+                    name: "pedro",
+                    photo: "https://"),
+                       resource: "https://",
+                       description: "Publicacion de David en la parte social"),
+                Social(professional:User(
+                    name: "lunaa",
+                    photo: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300",
+                    password: "$2b$12$xFyrpIOgKuu1awuFNPNn8OQRkKXS9uh7au0A.3S/BUz3SwURnjR3y"),
+                       resource: "https://",
+                       description: "Descripcion publicacion en la parte social")
          ]
-         self.users = fakeUsers
+         self.publications = fakeSocial
      }
-    
 }

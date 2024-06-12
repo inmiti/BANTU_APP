@@ -9,24 +9,41 @@ import SwiftUI
 
 struct SocialView: View {
     @StateObject var viewModel = SocialViewModel()
+    
     var body: some View {
         ZStack {
-            //Background
+            // Background
             Image(decorative:"")
                 .resizable()
                 .background(Color.bantu_background)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
+                // Header
                 HeaderView(headerText: "Bantu Social", nameButtonHeader: "Publica contenido")
                 
-                Spacer()
-              
+                // Celda personalizada
                 List {
-                    
+                    ForEach(viewModel.publications, id: \.id ) { publication in
+                        SocialCell(name: publication.professional.name ?? "",
+                                   photo: publication.professional.photo ?? "",
+                                   content: publication.description ?? "",
+                                   resource: publication.resource)
+                        .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                        .listRowBackground(Color.bantu_background)
+                    }
                 }
+                .scrollContentBackground(.hidden)
+                .padding(.top, 0)
+                .onAppear{
+                    Task {
+                        await viewModel.getSocialPublications
+                    }
             }
-            .ignoresSafeArea(edges: .top)
+            .background(Color.bantu_background)
+            }
+            .ignoresSafeArea(.all)
+            
         }
     }
 }
@@ -37,6 +54,8 @@ struct SocialView: View {
 
 struct SocialView_Previews: PreviewProvider {
     static var previews: some View {
-        SocialView()
+        let vm = SocialViewModel(useCase: UseCaseFake())
+        vm.loadMockData()
+        return SocialView(viewModel: vm)
     }
 }
