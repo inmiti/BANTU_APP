@@ -35,14 +35,15 @@ struct SocialView: View {
                 }
                 .scrollContentBackground(.hidden)
                 .padding(.top, 0)
-                .onAppear{
-                    Task {
-                        await viewModel.getSocialPublications
-                    }
-            }
-            .background(Color.bantu_background)
+                .background(Color.bantu_background)
             }
             .ignoresSafeArea(.all)
+            .padding(.bottom, 20)
+            .onAppear{
+                Task {
+                    await viewModel.getSocialPublications()
+                }
+        }
             
         }
     }

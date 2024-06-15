@@ -64,7 +64,7 @@ final class SearchCoachViewModel: ObservableObject {
             case .success(let response):
             users = response
             filterByNameProfessional = users
-            print("los prog \(users)")
+//            print("los prog \(users)")
             case .failure(let error as NetworkErrors):
                 print("error \(error)")
             case .failure(_):
