@@ -24,6 +24,9 @@
 		1FB62BDE2C121C3500920D26 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB62BDD2C121C3500920D26 /* View+Extension.swift */; };
 		1FB62BE02C121D5800920D26 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB62BDF2C121D5800920D26 /* RoundedCorner.swift */; };
 		1FC3D31C2C0F802A00CE6D55 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC3D31B2C0F802A00CE6D55 /* DetailHeaderView.swift */; };
+		1FC7D4612C2349AC00D3B8DF /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7D4602C2349AC00D3B8DF /* ChatsViewModel.swift */; };
+		1FC7D4642C2349EF00D3B8DF /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7D4632C2349EF00D3B8DF /* ChatCell.swift */; };
+		1FC7D4662C234CB100D3B8DF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7D4652C234CB100D3B8DF /* Chat.swift */; };
 		1FDDF8032BECC4E200484DD2 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDDF8022BECC4E200484DD2 /* UseCase.swift */; };
 		1FFC78DD2BF3D6EA0015C454 /* StatusModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFC78DC2BF3D6EA0015C454 /* StatusModels.swift */; };
 		610989B82BC9905700A78684 /* CustomFieldView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610989B52BC9905700A78684 /* CustomFieldView2.swift */; };
@@ -112,6 +115,9 @@
 		1FB62BDD2C121C3500920D26 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		1FB62BDF2C121D5800920D26 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		1FC3D31B2C0F802A00CE6D55 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		1FC7D4602C2349AC00D3B8DF /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
+		1FC7D4632C2349EF00D3B8DF /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		1FC7D4652C234CB100D3B8DF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		1FDDF8022BECC4E200484DD2 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		1FFC78DC2BF3D6EA0015C454 /* StatusModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModels.swift; sourceTree = "<group>"; };
 		610989B52BC9905700A78684 /* CustomFieldView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFieldView2.swift; sourceTree = "<group>"; };
@@ -205,9 +211,19 @@
 		1F9CACBA2BF37F9D004744E4 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
+				1FC7D4622C2349D800D3B8DF /* ChatCell */,
 				1F9CACBB2BF37FB2004744E4 /* ChatsView.swift */,
+				1FC7D4602C2349AC00D3B8DF /* ChatsViewModel.swift */,
 			);
 			path = Chats;
+			sourceTree = "<group>";
+		};
+		1FC7D4622C2349D800D3B8DF /* ChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				1FC7D4632C2349EF00D3B8DF /* ChatCell.swift */,
+			);
+			path = ChatCell;
 			sourceTree = "<group>";
 		};
 		612E339B2BD528C900D2F2D3 /* KeyChain */ = {
@@ -386,6 +402,7 @@
 				618F54452BC2FAE40088BD2C /* Province.swift */,
 				1F169DA32BDA3A410096AB08 /* AuthResponse.swift */,
 				1F898C292C160D770013E622 /* Social.swift */,
+				1FC7D4652C234CB100D3B8DF /* Chat.swift */,
 				1FA56BDF2BD96FE2003E3628 /* ProfessionalFake.swift */,
 				1FA56BE32BD976DF003E3628 /* UserFake.swift */,
 				1FFC78DC2BF3D6EA0015C454 /* StatusModels.swift */,
@@ -449,9 +466,9 @@
 		61C458D42BB838D800AE8CF3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1F9CACBA2BF37F9D004744E4 /* Chats */,
 				612E33A52BD5890A00D2F2D3 /* DetailProfessionalView */,
 				618F542B2BC296D40088BD2C /* Settings */,
+				1F9CACBA2BF37F9D004744E4 /* Chats */,
 				618F54282BC296C00088BD2C /* Social */,
 				618F54252BC296900088BD2C /* Search Coach */,
 				61C458E92BB83B6200AE8CF3 /* Home */,
@@ -697,6 +714,7 @@
 				61EDCB0F2BCA906B00D79608 /* AgendaView.swift in Sources */,
 				61A506AF2BD6F1B700BE68EC /* ButtonFilter.swift in Sources */,
 				61C458E52BB839EA00AE8CF3 /* LoginViewModel.swift in Sources */,
+				1FC7D4612C2349AC00D3B8DF /* ChatsViewModel.swift in Sources */,
 				61C2EF882BCBF03B00DB96F9 /* SearchCoachViewModel.swift in Sources */,
 				1FFC78DD2BF3D6EA0015C454 /* StatusModels.swift in Sources */,
 				612E339D2BD528DB00D2F2D3 /* KeyChain.swift in Sources */,
@@ -720,6 +738,7 @@
 				618F54342BC2E88F0088BD2C /* RegistrationViewModel.swift in Sources */,
 				6178BD0B2BC1940900257502 /* HomeClientView.swift in Sources */,
 				613656A12BB3361500DA8A71 /* Bantu_iOS.xcdatamodeld in Sources */,
+				1FC7D4662C234CB100D3B8DF /* Chat.swift in Sources */,
 				61EDCB0D2BCA905700D79608 /* HomeCoachView.swift in Sources */,
 				1F9CACBC2BF37FB2004744E4 /* ChatsView.swift in Sources */,
 				61E62D222BC1A1CA00A5A6CF /* TabBarView.swift in Sources */,
@@ -733,6 +752,7 @@
 				618F54462BC2FAE40088BD2C /* Province.swift in Sources */,
 				612E33A92BD5895B00D2F2D3 /* DetailProfessionalView.swift in Sources */,
 				610989B82BC9905700A78684 /* CustomFieldView2.swift in Sources */,
+				1FC7D4642C2349EF00D3B8DF /* ChatCell.swift in Sources */,
 				6178BD092BC18EA900257502 /* HeaderView.swift in Sources */,
 				1F898C2D2C160F650013E622 /* SocialCell.swift in Sources */,
 				61B444142BD8DA2600C10B27 /* String+Extension.swift in Sources */,

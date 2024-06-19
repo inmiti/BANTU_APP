@@ -8,7 +8,7 @@
 import Foundation
 
 struct Social: Codable, Identifiable {
-    var id: Int?
+    var id: Int
     var professional: User
     var resource: String
     var description: String?

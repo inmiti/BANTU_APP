@@ -62,9 +62,12 @@ final class SearchCoachViewModel: ObservableObject {
             }
         switch await task.result {
             case .success(let response):
-            users = response
-            filterByNameProfessional = users
-//            print("los prog \(users)")
+            DispatchQueue.main.async { [self] in
+                self.users = response
+                self.filterByNameProfessional = self.users
+    //            print("los prog \(users)")
+            }
+            
             case .failure(let error as NetworkErrors):
                 print("error \(error)")
             case .failure(_):
