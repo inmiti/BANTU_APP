@@ -12,4 +12,5 @@ struct Chat: Codable, Identifiable {
     var message: String
     var user: User
     var date: String
+    // var readNotRead
 }

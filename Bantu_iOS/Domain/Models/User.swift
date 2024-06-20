@@ -19,4 +19,6 @@ struct User: Codable {
     var password: String?
     var active: Bool?
     var professional: Professional?
+    var publications: [Social]?
+    var messages: [Chat]?
 }

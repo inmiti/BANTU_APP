@@ -12,7 +12,7 @@ struct ChatCell: View {
     @State var photo: String
     @State var message: String
     @State var recivedAt: String
-    @State var notRead: Bool
+//    TODO: BELL FOR NOT READ @State var notRead: Bool
     
     var body: some View {
         HStack {
@@ -47,17 +47,18 @@ struct ChatCell: View {
             }
             .padding(.horizontal)
             
-           
             VStack {
                 Text(recivedAt)
                     .font(.caption2)
                     .foregroundColor(.bantu_text)
-                if notRead {
-                    Image(systemName: "bell.fill")
-                        .resizable()
-                        .frame(width: 13, height: 13)
-                        .foregroundColor(.bantu_text)
-                }
+                
+//                if notRead {
+                // Bell for indicate that message is not read yet.
+//                    Image(systemName: "bell.fill")
+//                        .resizable()
+//                        .frame(width: 13, height: 13)
+//                        .foregroundColor(.bantu_pink)
+//                }
             }
         }
         .padding()
@@ -72,6 +73,7 @@ struct ChatCell: View {
 
 struct ChatCell_Previews: PreviewProvider {
     static var previews: some View {
-        ChatCell(name: "Eva", photo: "https://.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300", message: "Buenos días, contacto con usted para consultarle acerca de sus servicios como entrenador. Estoy interesada en ganar fuerza y agilidad.", recivedAt: "15:00", notRead: true)
+        ChatCell(name: "Eva", photo: "https://avatars.githubusercontent.com/u/1?v=4", message: "Buenos días, contacto con usted para consultarle acerca de sus servicios como entrenador. Estoy interesada en ganar fuerza y agilidad.", recivedAt: "15:00")
+         //, notRead: true)
     }
 }

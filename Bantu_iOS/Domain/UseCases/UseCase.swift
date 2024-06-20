@@ -12,6 +12,7 @@ protocol UseCaseProtocol {
     func registerUser(user: User) async throws -> User
     func getProfessionals(token: String) async throws -> [User]
     func getSocialPublications(token: String) async throws -> [Social]
+    func getChats(token: String) async throws -> [Chat]
 }
 
 //Real
@@ -36,6 +37,10 @@ final class UseCaseReal: UseCaseProtocol {
     
     func getSocialPublications(token: String) async throws -> [Social] {
         return try await network.getSocialPublications(token: token)
+    }
+    
+    func getChats(token: String) async throws -> [Chat] {
+        return try await network.getChats(token: token)
     }
 }
 
@@ -62,6 +67,10 @@ final class UseCaseFake: UseCaseProtocol {
     func getSocialPublications(token: String) async throws -> [Social] {
         return try await networkFake.getSocialPublications(token: token)
     }
+    
+    func getChats(token: String) async throws -> [Chat] {
+        return try await networkFake.getChats(token: token)
+    }
 }
 
 // Mock Failure
@@ -87,6 +96,10 @@ final class UseCaseFakeFailure: UseCaseProtocol {
     }
     
     func getSocialPublications(token: String) async throws -> [Social] {
+        throw NetworkErrors.general
+    }
+    
+    func getChats(token: String) async throws -> [Chat] {
         throw NetworkErrors.general
     }
 }

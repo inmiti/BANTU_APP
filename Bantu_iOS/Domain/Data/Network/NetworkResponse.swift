@@ -12,7 +12,8 @@ protocol NetworkResponseProtocol {
     func login(email: String, password: String) async throws -> AuthResponse
     func getProfessionals(token: String) async throws -> [User]
     func registerUser(user: User) async throws -> User
-    func getSocialPublications(token: String) async throws -> [Social] 
+    func getSocialPublications(token: String) async throws -> [Social]
+    func getChats(token: String) async throws -> [Chat]
 }
 
 // Real
@@ -42,6 +43,11 @@ final class NetworkResponse: NetworkResponseProtocol {
     
     func getSocialPublications(token: String) async throws -> [Social] {
         //TODO: Pendiente hacer api
+        return []
+    }
+    
+    func getChats(token: String) async throws -> [Chat] {
+        //TODO: Pendiente de hacer api
         return []
     }
     
@@ -120,6 +126,14 @@ final class NetworkResponseFake: NetworkResponseProtocol {
         if token == "asdasdasd" {
             return SocialFake().socialResponse
         } else{
+            throw NetworkErrors.general
+        }
+    }
+    
+    func getChats(token: String) async throws -> [Chat] {
+        if token == "asdasdasd" {
+            return ChatsFake().response
+        } else {
             throw NetworkErrors.general
         }
     }

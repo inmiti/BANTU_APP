@@ -75,9 +75,9 @@ struct SocialCell: View {
 struct SocialCell_Previews: PreviewProvider {
     static var previews: some View {
         SocialCell(name: "eva",
-                   photo:"https://.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300",
+                   photo:"https://avatars.githubusercontent.com/u/1?v=4",
                    content: "Aquí os dejo un listado de ejercicios para poner a punto tu abdomen. Espero que os guste, sígueme para ver mas publicaciones como ésta.",
-                   resource: "https://.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300")
-        .previewLayout(.sizeThatFits)
+                   resource: "https://res.cloudinary.com/dy1glfb80/image/upload/v1718880247/cld-sample-3.jpg")
+//        .previewLayout(.sizeThatFits)
     }
 }
