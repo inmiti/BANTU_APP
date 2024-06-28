@@ -22,8 +22,8 @@ struct DetailProfessionalView: View {
                 DetailHeaderView(photo: professional.photo,
                                  name: professional.name,
                                  firstName: professional.lastName1)
-                .ignoresSafeArea(edges: .top)
                 
+                Spacer()
                 // Description
                 if let description = professional.professional?.description {
                     Text(description)
@@ -79,8 +79,9 @@ struct DetailProfessionalView: View {
                 
                 Spacer()
             }
+            .ignoresSafeArea(edges: .top)
                 
-                Spacer()
+//                Spacer()
         }
     }
 }

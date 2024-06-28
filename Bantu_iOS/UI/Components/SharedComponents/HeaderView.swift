@@ -10,6 +10,7 @@ import SwiftUI
 struct HeaderView: View {
     var headerText: String = ""
     var nameButtonHeader: String = ""
+    var systemNameImage: String = ""
     
     var body: some View {
         ZStack {
@@ -47,7 +48,7 @@ struct HeaderView: View {
                         .font(.system(size: 15))
                         .foregroundColor(.black)
                         .frame(maxWidth: 70)
-                    Image(systemName: "plus")
+                    Image(systemName: systemNameImage)
                         .foregroundColor(.black)
                 })
                 .padding(.top,42)
@@ -66,7 +67,8 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderView(headerText: "Profesionales",
-                   nameButtonHeader : "Publica contenido")
+                   nameButtonHeader : "Publica contenido",
+                   systemNameImage: "plus")
         .previewLayout(.sizeThatFits)
     }
 }

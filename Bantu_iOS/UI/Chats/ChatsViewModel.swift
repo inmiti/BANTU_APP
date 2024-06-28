@@ -63,5 +63,6 @@ final class ChatsViewModel: ObservableObject {
                 date: "2023-12-06"
             )
         ]
+        self.chatsList = fakeChat
     }
 }

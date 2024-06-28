@@ -21,7 +21,7 @@ struct SearchCoachView: View {
             
             VStack {
                 // Header
-                HeaderView(headerText: "Profesionales", nameButtonHeader: "Date de alta")
+                HeaderView(headerText: "Profesionales", nameButtonHeader: "Date de alta", systemNameImage: "plus")
                     .ignoresSafeArea(edges: .top)
         
                 ScrollView (showsIndicators: false){
@@ -51,13 +51,11 @@ struct SearchCoachView: View {
                             }
                         }
                         .padding()
-                        .padding(.horizontal)
+//                        .padding(.horizontal)
                     }
                 }
                 .padding(.bottom, 20)
                 .background(Color.bantu_background)
-                
-                
             }
             .background(Color.bantu_background)
             .ignoresSafeArea(edges: .top)
@@ -69,9 +67,6 @@ struct SearchCoachView: View {
         }
     }
 }
-//#Preview {
-//    SearchCoachView()
-//}
 
 struct SearchCoachView_Previews: PreviewProvider {
     static var previews: some View {

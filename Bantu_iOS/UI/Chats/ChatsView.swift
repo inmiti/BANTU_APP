@@ -20,7 +20,7 @@ struct ChatsView: View {
             
             VStack {
                 // Header
-                HeaderView(headerText: "Bantu Chat", nameButtonHeader: "Redacta un mensaje")
+                HeaderView(headerText: "Bantu Chat", nameButtonHeader: "", systemNameImage: "magnifyingglass")
                 
                 // Celda personalizada
                 List {
@@ -32,11 +32,14 @@ struct ChatsView: View {
                         )
                         .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                         .listRowBackground(Color.bantu_background)
+                        .listRowSeparator(.hidden)
                     }
                 }
                 .scrollContentBackground(.hidden)
-                .padding(.top, 0)
                 .background(Color.bantu_background)
+                .listStyle(.inset)
+                .padding(.horizontal)
+                
             }
             .ignoresSafeArea(.all)
             .padding(.bottom, 20)

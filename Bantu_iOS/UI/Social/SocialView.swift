@@ -20,7 +20,7 @@ struct SocialView: View {
             
             VStack {
                 // Header
-                HeaderView(headerText: "Bantu Social", nameButtonHeader: "Publica contenido")
+                HeaderView(headerText: "Bantu Social", nameButtonHeader: "Publica contenido", systemNameImage: "plus")
                 
                 // Celda personalizada
                 List {
@@ -31,6 +31,7 @@ struct SocialView: View {
                                    resource: publication.resource)
                         .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                         .listRowBackground(Color.bantu_background)
+                        .listRowSeparator(.hidden)
                     }
                 }
                 .scrollContentBackground(.hidden)
