@@ -23,9 +23,7 @@ struct SettingsView: View {
                     NavigationLink("Editar foto", destination: Text("Editando foto"))
                     NavigationLink("Modificar contraseña", destination: Text("Modificando contraseña"))
                 }
-
-            }
-            Form{
+                
                 Section("Preferencias") {
                     //Quien puede ver tu perfil
                     NavigationLink("Quien puede ver tu perfil", destination: Text("Configurando"))
@@ -36,8 +34,7 @@ struct SettingsView: View {
                     NavigationLink("Idioma", destination: Text("Elige idioma"))
                     
                 }
-            }
-            List {
+                
                 Section {
                     NavigationLink("Informar de un problema", destination: Text("Informando"))
                     NavigationLink("Condiciones generales de uso", destination: Text("Condiciones generales de uso"))
@@ -52,7 +49,10 @@ struct SettingsView: View {
                         Spacer()
                     }
                 }
+
             }
+          
+            
             
         
             
