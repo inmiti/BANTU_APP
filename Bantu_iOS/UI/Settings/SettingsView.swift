@@ -16,15 +16,29 @@ struct SettingsView: View {
             Text("Settings")
                 .font(.title)
                 .foregroundColor(.bantu_orange)
+                .frame(maxWidth: .infinity,alignment: .leading)
+                .padding()
             
             List {
-                Section("Información personal") {
+                Section(header: Text("Información personal")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .textCase(nil)
+                    .foregroundColor(.black)
+                ) {
                     NavigationLink("Editar datos personales", destination: Text("Editanto datos personales"))
                     NavigationLink("Editar foto", destination: Text("Editando foto"))
                     NavigationLink("Modificar contraseña", destination: Text("Modificando contraseña"))
+                    NavigationLink("Métodos de pago", destination: Text("Métodos de pago"))
                 }
+                .listRowSeparator(.hidden)
                 
-                Section("Preferencias") {
+                Section(header: Text("Preferencias")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .textCase(nil)
+                    .foregroundColor(.black)
+                ) {
                     //Quien puede ver tu perfil
                     NavigationLink("Quien puede ver tu perfil", destination: Text("Configurando"))
                     
@@ -32,30 +46,37 @@ struct SettingsView: View {
                     
                     // Idioma
                     NavigationLink("Idioma", destination: Text("Elige idioma"))
-                    
                 }
+                .listRowSeparator(.hidden)
                 
-                Section {
-                    NavigationLink("Informar de un problema", destination: Text("Informando"))
+                Section (header: Text("Ayuda")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .textCase(nil)
+                    .foregroundColor(.black)
+                ) {
                     NavigationLink("Condiciones generales de uso", destination: Text("Condiciones generales de uso"))
                     NavigationLink("Protección de datos", destination: Text("Protección de datos"))
                     NavigationLink("Califica la app", destination: Text("Enlace para valorar la app"))
-                } header: {
-                    Text("Ayuda")
-                } footer: {
-                    HStack{
-                        Spacer()
-                        Label("version 1.0", systemImage: "iphone")
-                        Spacer()
-                    }
                 }
-
+                .listRowSeparator(.hidden)
+                
+                
+                Text("Cerrar sesión")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.bantu_orange)
+                    .background(
+                        NavigationLink("",
+                            destination: Text("Proceso Cerrando sesión"))
+                        .opacity(0)
+                        )
+                    .listRowSeparator(.hidden)
+                    .padding(.top, 16)
             }
-          
-            
-            
-        
-            
+            .scrollContentBackground(.hidden)
+            .listStyle(.plain)
+            .padding(.top, -24)            
         }
     }
 }

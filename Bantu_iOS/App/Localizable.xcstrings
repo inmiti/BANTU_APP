@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     " Ha ocurrido un error " : {
 
     },
@@ -17,7 +14,35 @@
         }
       }
     },
-    "Buscar" : {
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Accede a mis entrenamientos" : {
+
+    },
+    "Ayuda" : {
+
+    },
+    "Califica la app" : {
+
+    },
+    "Chats" : {
+
+    },
+    "Condiciones generales de uso" : {
+
+    },
+    "Configurando" : {
+
+    },
+    "Contáctame" : {
 
     },
     "Create an account" : {
@@ -33,6 +58,24 @@
     "Create your account" : {
 
     },
+    "Editando foto" : {
+
+    },
+    "Editanto datos personales" : {
+
+    },
+    "Editar datos personales" : {
+
+    },
+    "Editar foto" : {
+
+    },
+    "Elige idioma" : {
+
+    },
+    "Enlace para valorar la app" : {
+
+    },
     "Forgot Password?" : {
       "localizations" : {
         "es" : {
@@ -44,6 +87,7 @@
       }
     },
     "Hola2 alguien" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -54,6 +98,18 @@
       }
     },
     "Home" : {
+
+    },
+    "Idioma" : {
+
+    },
+    "Información personal" : {
+
+    },
+    "Informando" : {
+
+    },
+    "Informar de un problema" : {
 
     },
     "Key" : {
@@ -80,7 +136,28 @@
         }
       }
     },
+    "Mis publicaciones" : {
+
+    },
+    "Modificando contraseña" : {
+
+    },
+    "Modificar contraseña" : {
+
+    },
+    "Notificaciones push" : {
+
+    },
     "Parece que algo salió mal" : {
+
+    },
+    "Preferencias" : {
+
+    },
+    "Protección de datos" : {
+
+    },
+    "Quien puede ver tu perfil" : {
 
     },
     "Register" : {
@@ -96,16 +173,16 @@
         }
       }
     },
-    "search" : {
-
-    },
     "Settings" : {
 
     },
     "Social" : {
 
     },
-    "Social " : {
+    "version 1.0" : {
+
+    },
+    "Volver" : {
 
     },
     "Wellcome Back" : {
@@ -119,6 +196,7 @@
       }
     },
     "Your email" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -137,9 +215,6 @@
           }
         }
       }
-    },
-    "Your Password" : {
-
     }
   },
   "version" : "1.0"
